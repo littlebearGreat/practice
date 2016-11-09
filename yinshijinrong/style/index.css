@@ -1,0 +1,179 @@
+ul,li,a,body,
+input{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+html{
+	font-size: 625%;
+	font-family: "微软雅黑" Helvetica, STHeiTi, Arial, sans-serif;
+	-ms-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%;  
+}
+/*导航css-----------------------------*/
+.banner-box{
+	height: 6.3rem;
+	font-size: 0;
+	background-image: url(../images/index01.jpg);
+	background-size: 1920px 630px;
+	background-position: center;
+	min-width: 1080px;
+}
+.nav{
+	width: 10.80rem;
+	height: 1rem;
+	margin: 0 auto;
+	font-size: 0.15rem;
+	overflow: hidden;
+}
+.mark{
+	display: inline-block;
+	width: 1.66rem;
+	height: 1rem;
+	overflow: hidden;
+}
+.mark>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.mark img{
+	width: 6rem;
+	margin-top: 0.2rem;
+	margin-left: -0.05rem;
+}
+.nav>ul{
+	list-style: none;
+	width: 3.9rem;
+	margin-left: 3.22rem;
+	height: 1rem;
+	display: inline-block;
+}
+.nav>ul>li{
+	float: left;
+	margin: 0 0.1rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+.nav>ul>li>a{
+	color: #e0e0e0;
+	text-decoration: none;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+.nav>ul>li>a:hover{
+	color: #1b69b6;
+}
+.search{
+	display: inline-block;
+	width: 1.26rem;
+	height: 0.26rem;
+	margin: 0.37rem 0 0.37rem 0.24rem;
+	background-color: #4f6571;
+	border-radius: 0.1rem;
+	overflow: hidden;
+	font-size: 0;
+}
+.search>input{
+	width: 0.8rem;
+	height: 0.26rem;
+	border: none;
+	padding: 0 0.1rem;
+	text-align: center;
+	background: #4f6571;
+	outline: none;
+	font-size: 16px;
+	vertical-align: middle;
+}
+.search>span{
+	display: inline-block;
+	width: 0.26rem;
+	height: 0.26rem;
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.search img{
+	width: 6rem;
+	position: absolute;
+	left: -5.36rem;
+	top: -1.2rem;
+}
+/*下面是轮播图-----------------------------*/
+.cont{
+	height: 5.3rem;
+	width: 10.8rem;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.pic{
+	width: 54rem;
+	position: absolute;
+	left: -1080px;
+	top: 0rem;
+}
+.pic li{
+	display: inline-block;
+	width: 10.8rem;
+	height: 5.3rem;
+	font-size: 1rem;
+}
+.circle{
+	list-style: none;
+	position: absolute;
+	top: 460px;
+	left: 471px;
+}
+.circle li{
+	display: inline-block;
+	width: 0.16rem;
+	height: 0.16rem;
+	border-radius: 50%;
+	background: #fff;
+	margin: 0 20px;
+}
+.circle li:hover{
+	cursor: pointer;
+}
+.active{
+	background: #666 !important;
+}
+.prev,
+.next{
+	font-size: 24px;
+	color: #fff;
+	width: 50px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background-color: rgba(10,18,42,0.2);
+	overflow: hidden;
+	display: none;
+}
+.prev{
+	float: left;
+}
+.prev>img{
+	width: 160px;
+	height: 204px;
+	margin-left: -15px;
+}
+.next{
+	float: right;
+}
+.next>img{
+	width: 160px;
+	height: 204px;
+	margin-left: -95px;
+}
+.turn{
+	position: absolute;
+	top: 265px;
+	width: 100%;
+	height: 100px;
+}
+.turn>li:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+}
