@@ -316,3 +316,8 @@ html{
 .turn-l{
 	animation: turn-l 1s;
 }
+/*下面是第二张轮播框中的内容*/
+.pic-turn02{
+	background: url(../images/index-turn-02.png);
+	background-size: 1080px 530px;
+}
