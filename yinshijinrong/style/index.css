@@ -23,7 +23,7 @@ html{
 	width: 10.80rem;
 	height: 1rem;
 	margin: 0 auto;
-	font-size: 0.15rem;
+	/*font-size: 0.15rem;*/
 	overflow: hidden;
 }
 .mark{
@@ -48,6 +48,7 @@ html{
 	margin-left: 3.22rem;
 	height: 1rem;
 	display: inline-block;
+	font-size: 0.15rem;
 }
 .nav>ul>li{
 	float: left;
@@ -72,7 +73,6 @@ html{
 	background-color: #4f6571;
 	border-radius: 0.1rem;
 	overflow: hidden;
-	font-size: 0;
 }
 .search>input{
 	width: 0.8rem;
@@ -89,15 +89,36 @@ html{
 	display: inline-block;
 	width: 0.26rem;
 	height: 0.26rem;
-	position: relative;
 	overflow: hidden;
 	vertical-align: middle;
 }
-.search img{
-	width: 6rem;
-	position: absolute;
-	left: -5.36rem;
-	top: -1.2rem;
+/*调整nav中的字体图标*/
+.search i{
+	line-height: 26px;
+	color: #fff;
+}
+.accunt{
+	display: inline-block;
+	height: 100px;
+	width: 52px;
+	vertical-align: top;
+	text-align: center;
+}
+.accunt>i{
+	font-size: 28px;
+	line-height: 100px;
+	color: #fff;
+}
+.accunt>i:hover{
+	cursor: pointer;
+	font-size: 38px;
+}
+.search i:hover{
+	cursor: pointer;
+	font-size: 22px;
+}
+.trans{
+	transition: all 0.5s;
 }
 /*下面是轮播图-----------------------------*/
 .cont{
