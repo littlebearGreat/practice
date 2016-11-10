@@ -69,4 +69,16 @@ $(function(){
 				left:-1080*i
 		},100);
 	});
+	// 第一个轮播框的动画
+	$('.pic-circle-turn').hover(function(){
+		$('.pic-circle-z-index1').removeClass('turn-l');
+		$('.pic-circle-z-index2').removeClass('turn-r');
+		$('.pic-circle-z-index1').addClass('turn-r');
+		$('.pic-circle-z-index2').addClass('turn-l');
+	},function(){
+		$('.pic-circle-z-index1').removeClass('turn-r');
+		$('.pic-circle-z-index2').removeClass('turn-l');
+		$('.pic-circle-z-index1').addClass('turn-l');
+		$('.pic-circle-z-index2').addClass('turn-r');
+	})
 })

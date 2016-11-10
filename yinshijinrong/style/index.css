@@ -1,4 +1,4 @@
-ul,li,a,body,
+ul,li,a,body,p,
 input{
 	margin: 0;
 	padding: 0;
@@ -121,6 +121,7 @@ html{
 	transition: all 0.5s;
 }
 /*下面是轮播图-----------------------------*/
+/*轮播样式*/
 .cont{
 	height: 5.3rem;
 	width: 10.8rem;
@@ -138,13 +139,13 @@ html{
 	display: inline-block;
 	width: 10.8rem;
 	height: 5.3rem;
-	font-size: 1rem;
 }
 .circle{
 	list-style: none;
 	position: absolute;
 	top: 460px;
 	left: 471px;
+	z-index: 2;
 }
 .circle li{
 	display: inline-block;
@@ -197,4 +198,121 @@ html{
 .turn>li:hover{
 	cursor: pointer;
 	background-color: rgba(0,0,0,0.2);
+}
+/*第一张轮播框中的内容*/
+.pic-square{
+	display: inline-block;
+	width: 540px;
+	height: 530px;
+	vertical-align: top;
+}
+.pic-circle{
+	display: inline-block;
+	width: 540px;
+	height: 530px;
+}
+.pic-square-cont{
+	width: 265px;
+	height: 266px;
+	background: url(../images/index-turn-01.png);
+	margin-top: 104px;
+	margin-left: 130px;
+}
+.pic-square-cont .ch{
+	display: inline-block;
+	width: 61px;
+	height: 68px;
+	margin-top: 53px;
+	margin-left: 28px;
+}
+.pic-square-cont .ch>b{
+	color: #fff;
+	font-size: 60px;
+}
+.pic-square-cont .chi{
+	margin-left: 6px;
+	margin-top: 53px;
+	height: 26px;
+	display: inline-block;
+	vertical-align: top;
+}
+.pic-square-cont .chi .grow{
+	font-size: 14px;
+	color: #fff;
+	line-height: 16px;
+	margin-top: 10px;
+}
+.pic-square-cont .chi .small{
+	font-size: 30px;
+	color: #fff;
+	line-height: 43px;
+	margin-left: -4px;
+}
+.pic-square-cont>.en{
+	font-size: 26px;
+	line-height: 28px;
+	margin-left: 28px;
+	color: #fff;
+}
+.pic-square-cont>span{
+	display: inline-block;
+	width: 106px;
+	height: 36px;
+	background-color: #1b67b6;
+	text-align: center;
+	margin-top: 30px;
+	margin-left: 55px;
+	border-radius: 3px;
+}
+.pic-square-cont>span>a{
+	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
+	line-height: 36px;
+	padding: 11px 25px;
+}
+.pic-circle{
+	position: relative;
+	z-index: 1;
+}
+.pic-circle div{
+	width: 370px;
+	height: 238px;
+	position: absolute;
+	top: 115px;
+	left: 114px;
+	background-size: 364px 214px;
+	background-position: center center;
+}
+.pic-circle-z-index0{
+	background: url(../images/index-turn-circle01.png) no-repeat;
+
+}
+.pic-circle-z-index1{
+	background: url(../images/index-turn-circle02.png) no-repeat;
+}
+.pic-circle-z-index2{
+	background: url(../images/index-turn-circle03.png) no-repeat;
+}
+@keyframes turn-r {
+	0%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(-360deg);
+	}
+}
+@keyframes turn-l {
+	0%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+.turn-r{
+	animation: turn-r 1s;
+}
+.turn-l{
+	animation: turn-l 1s;
 }
