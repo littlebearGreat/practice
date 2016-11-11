@@ -128,6 +128,7 @@ html{
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	z-index: 1;
 }
 .pic{
 	width: 54rem;
@@ -135,10 +136,11 @@ html{
 	left: -1080px;
 	top: 0rem;
 }
-.pic li{
+.pic>li{
 	display: inline-block;
 	width: 10.8rem;
 	height: 5.3rem;
+	vertical-align: middle;
 }
 .circle{
 	list-style: none;
@@ -172,6 +174,8 @@ html{
 	background-color: rgba(10,18,42,0.2);
 	overflow: hidden;
 	display: none;
+	position: relative;
+	z-index: 3;
 }
 .prev{
 	float: left;
@@ -273,7 +277,6 @@ html{
 }
 .pic-circle{
 	position: relative;
-	z-index: 1;
 }
 .pic-circle div{
 	width: 370px;
@@ -320,4 +323,57 @@ html{
 .pic-turn02{
 	background: url(../images/index-turn-02.png);
 	background-size: 1080px 530px;
+}
+.chart{
+	list-style: none;
+	height: 400px;
+	width: 600px;
+	margin-left: 264px;
+	margin-top: 21px;
+}
+.chart li{
+	display: inline-block;
+	width: 50px;
+	margin-left: 50px;
+	vertical-align: bottom;
+	transition: all 0.8s;
+	
+}
+.chart-on{
+	height: 80px;
+	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
+}
+.chart-tw{
+	height: 136px;
+	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
+}
+.chart-th{
+	height: 100px;
+	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
+}
+.chart-fo{
+	height: 120px;
+	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
+}
+.chart-si{
+	height: 150px;
+	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
+}
+.chart-se{
+	height: 400px;
+}
+.chart:hover .chart-on{
+	height: 130px;
+}
+.chart:hover .chart-tw{
+	height: 250px;
+}
+.chart:hover .chart-th{
+	height: 280px;
+}
+.chart:hover .chart-fo{
+	height: 150px;
+}
+.chart:hover .chart-si{
+	height: 300px;
 }
