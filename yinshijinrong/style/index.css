@@ -71,7 +71,7 @@ html{
 	height: 0.26rem;
 	margin: 0.37rem 0 0.37rem 0.24rem;
 	background-color: #4f6571;
-	border-radius: 0.1rem;
+	border-radius: 0.13rem;
 	overflow: hidden;
 }
 .search>input{
@@ -329,7 +329,7 @@ html{
 	height: 400px;
 	width: 600px;
 	margin-left: 264px;
-	margin-top: 21px;
+	margin-top: 23px;
 }
 .chart li{
 	display: inline-block;
@@ -355,11 +355,11 @@ html{
 	height: 120px;
 	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
 }
-.chart-si{
-	height: 150px;
+.chart-fi{
+	height: 152px;
 	background: linear-gradient(to top,rgba(16,91,227,1),rgba(62,134,233,1),rgba(131,180,229,1))
 }
-.chart-se{
+.chart-si{
 	height: 400px;
 }
 .chart:hover .chart-on{
@@ -374,6 +374,145 @@ html{
 .chart:hover .chart-fo{
 	height: 150px;
 }
-.chart:hover .chart-si{
+.chart:hover .chart-fi{
 	height: 300px;
+}
+/*下面是第三张轮播框中的内容*/
+.pic-turn03 ul{
+	list-style: none;
+	display: inline-block;
+	width: 690px;
+	height: 180px;
+	margin-top: 150px;
+}
+.pic-turn03 li{
+	display: inline-block;
+	width: 180px;
+	height: 180px;
+	margin-right: 50px;
+	overflow: hidden;
+	border-radius: 50%;
+	position: relative;
+}
+.pic-turn03 img{
+	width: 180px;
+	position: absolute;
+}
+.pic-turn03 .list1:after{
+	background-image: url(../images/index-turn-03-1b.png);
+	width: 180px;
+	height: 0;
+	content: '';
+	position: absolute;
+	background-position: center center;
+	transition: all 0.5s;
+	top: 90px;
+}
+.pic-turn03 .list1:hover:after{
+	height: 180px;
+	top: 0;
+}
+.pic-turn03 .list2:after{
+	background-image: url(../images/index-turn-03-2b.png);
+	width: 180px;
+	height: 0;
+	content: '';
+	position: absolute;
+	background-position: center center;
+	transition: all 0.5s;
+	top: 90px;
+}
+.pic-turn03 .list2:hover:after{
+	height: 180px;
+	top: 0;
+}
+.pic-turn03 .list3:after{
+	background-image: url(../images/index-turn-03-3b.png);
+	width: 180px;
+	height: 0;
+	content: '';
+	position: absolute;
+	background-position: center center;
+	transition: all 0.5s;
+	top: 90px;
+}
+.pic-turn03 .list3:hover:after{
+	height: 180px;
+	top: 0;
+}
+.list-r{
+	display: inline-block;
+	width: 200px;
+	height: 280px;
+	vertical-align: top;
+	margin-left: 60px;
+	margin-top: 120px;
+}
+.list-r1{
+	font-size: 30px;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+}
+.list-r2{
+	font-size: 38px;
+	color: #fff;
+	line-height: 38px;
+	text-align: center;
+	margin-top: 16px;
+}
+.list-r3{
+	width: 160px;
+	height: 18px;
+	margin-top: 40px;
+	margin-left: 20px;
+	position: relative;
+}
+.list-r3s1{
+	display: inline-block;
+	width: 80px;
+	height: 6px;
+	background-color: #eef009;
+	margin-top: 6px;
+}
+.list-r3s2{
+	display: inline-block;
+	width: 80px;
+	height: 6px;
+	background-color: #fefee6;
+	margin-top: 6px;
+}
+.list-r3s3{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 71px;
+	background-color: #eef009;
+}
+.list-r4{
+	width: 200px;
+	height: 40px;
+	margin-top: 34px;
+	border: 1px solid #eef009;
+	border-radius: 10px;
+	text-align: center;
+}
+.list-r4 a{
+	text-decoration: none;
+	color: #afff72;
+	font-size: 26px;
+	line-height: 40px;
+	padding: 7px 48px;
+}
+.list-r5{
+	font-size: 20px;
+	color: #fff;
+	margin-top: 18px;
+	text-align: center;
+}
+.list-r5 strong{
+	color: #ff6262;
 }
