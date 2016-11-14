@@ -516,3 +516,43 @@ html{
 	color: #ff6262;
 }
 /*下面是内容部分-------------------------------*/
+.grow-way{
+	min-width: 1080px;
+	height: 738px;
+	background: #fff;
+	margin: 0 auto;
+	font-size: 0;
+}
+.grow-way-tit {
+	text-align: center;
+	margin-top: 80px;
+}
+.grow-way-tit span{
+	font-size: 30px;
+	line-height: 30px;
+}
+.grow-way-tit-color{
+	color: #0951b3;
+}
+.grow-way-tit-small{
+	font-size: 14px;
+	color: #838383;
+	text-align: center;
+	line-height: 14px;
+	margin-top: 21px;
+}
+.grow-way-btn{
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	background-color: #0c57a3;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 13px;
+	margin: 30px auto 0;
+}
+.grow-way-btn a{
+	text-decoration: none;
+	color: #fff;
+	padding: 8px 13px;
+}
