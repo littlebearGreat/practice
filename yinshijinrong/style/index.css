@@ -562,3 +562,61 @@ html{
 	margin: 60px auto 0;
 	outline: 1px solid #000;
 }
+/*tab切换样式*/
+.grow-list-tit-normal{
+	list-style: none;
+	position: relative;
+	color: #848484;
+}
+.grow-list-tit-normal li{
+	position: absolute;
+	width: 280px;
+	height: 116px;
+	top: 16px;
+}
+.grow-normal1{
+	background: url(../images/grow-list-tit1.png);
+	left: 27px;
+}
+.grow-normal2{
+	background: url(../images/grow-list-tit2.png);
+	left: 410px;
+}
+.grow-normal3{
+	background: url(../images/grow-list-tit3.png);
+	left: 800px;
+}
+.grow-normal1 .p1,
+.grow-normal2 .p1,
+.grow-normal3 .p1{
+	font-size: 24px;
+	line-height: 26px;
+}
+.grow-normal1 .p2,
+.grow-normal2 .p2,
+.grow-normal3 .p2{
+	font-size: 14px;
+	line-height: 24px;
+}
+.grow-normal1 .p3,
+.grow-normal2 .p3,
+.grow-normal3 .p3{
+	font-size: 14px;
+	line-height: 18px;
+	margin-top: 11px;
+}
+.grow-normal1 .p4,
+.grow-normal2 .p4,
+.grow-normal3 .p4{
+	font-size: 14px;
+	line-height: 18px;
+}
+.grow-normal1 p{
+	margin-left: 60px;
+}
+.grow-normal2 p{
+	margin-left: 67px;
+}
+.grow-normal3 p{
+	margin-left: 66px;
+}
