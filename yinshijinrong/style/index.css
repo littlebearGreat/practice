@@ -561,11 +561,16 @@ html{
 	height: 164px;
 	margin: 60px auto 0;
 	outline: 1px solid #000;
+	position: relative;
 }
 /*tab切换样式*/
 .grow-list-tit-normal{
 	list-style: none;
-	position: relative;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1080px;
+	height: 164px;
 	color: #848484;
 }
 .grow-list-tit-normal li{
@@ -619,4 +624,53 @@ html{
 }
 .grow-normal3 p{
 	margin-left: 66px;
+}
+.grow-list-tit-active{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1080px;
+	height: 164px;
+	list-style: none;
+	color: #fff;
+}
+.grow-list-tit-active li{
+	position: absolute;
+	width: 301px;
+	height: 164px;
+	top: 0;
+}
+.grow-active1{
+	background: url(../images/grow-list-tit1b.png);
+	left: 0;
+}
+.grow-active2{
+	background: url(../images/grow-list-tit2b.png);
+	left: 390px;
+}
+.grow-active3{
+	background: url(../images/grow-list-tit3b.png);
+	left: 779px;
+}
+.grow-list-tit-active .p1{
+	margin-left: 42px;
+	font-size: 24px;
+	line-height: 24px;
+	margin-top: 26px;
+}
+.grow-list-tit-active .p2{
+	margin-left: 42px;
+	font-size: 14px;
+	line-height: 24px;
+}
+.grow-list-tit-active .p3{
+	margin-left: 42px;
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 27px;
+}
+.grow-list-tit-active .p4{
+	margin-left: 42px;
+	font-size: 14px;
+	line-height: 20px;
 }
