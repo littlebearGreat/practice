@@ -674,3 +674,12 @@ html{
 	font-size: 14px;
 	line-height: 20px;
 }
+.grow-cont{
+	width: 1080px;
+	height: 208px;
+	margin: 33px auto 0;
+	outline: 1px solid #999;
+}
+.grow-cont ul{
+	list-style: none;
+}
