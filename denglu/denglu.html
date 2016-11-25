@@ -46,19 +46,24 @@
 	test.onfocus = function(){
 		var cont = '';
 		var contlen = 0;
+		var num = 0;
 		setInterval(function(){
 			cont = test.value;
 			for (var i = 0; i < cont.length; i++) {
 				if (cont.charCodeAt(i)>255) {
 					contlen +=2;
+				}else{
+					num = 1;
 				};
 			};
-			if (contlen<4 || contlen>8) {
-				red.style.display = 'block';
-			}else{
+			if (contlen>3 & contlen<9 & num == 0) {
 				red.style.display = 'none';
+			}else{
+				red.style.display = 'block';
 			};
+			console.log(num);
 			contlen = 0;
+			num = 0;
 		},500)
 	}
 </script>
