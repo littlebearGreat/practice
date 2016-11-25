@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>登陆</title>
+	<link rel="stylesheet" href="denglu.css">
+
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li class="name">
+				<span>用户名</span>
+				<input type="text" id="test">
+				<span id="red">中文名为2-4个字符</span>
+			</li>
+			<li class="num">
+				<span>账号登陆</span>
+				<input type="text">
+			</li>
+			<li class="sex">
+				<span>性别</span>
+				<select name="" id="">
+					<option value="">男</option>
+					<option value="">女</option>
+				</select>
+			<li class="tel">
+				<span>联系电话</span>
+				<input type="text" name="number">
+			</li>
+			<li class="group">
+				<span>用户组</span>
+				<select name="" id="">
+					<option value="">1</option>
+					<option value="">2</option>
+					<option value="">3</option>
+					<option value="">4</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+</body>
+<script language="javascript" type="text/javascript"> 
+	var test = document.getElementById('test');
+	var red = document.getElementById('red');
+	test.onfocus = function(){
+		var cont = '';
+		var contlen = 0;
+		setInterval(function(){
+			cont = test.value;
+			for (var i = 0; i < cont.length; i++) {
+				if (cont.charCodeAt(i)>255) {
+					contlen +=2;
+				};
+			};
+			if (contlen<4 || contlen>8) {
+				red.style.display = 'block';
+			}else{
+				red.style.display = 'none';
+			};
+			contlen = 0;
+		},500)
+	}
+</script>
+</html>
