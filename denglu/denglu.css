@@ -1,14 +1,20 @@
 .box{
-	width: 600px;
-	height: 400px;
+	width: 450px;
+	height: 300px;
 	margin: 100px auto 0;
 	font-size: 16px;
+	border: 1px solid #333;
+	display: none;
+	position: relative;
+	box-shadow: -10px 10px 10px #999;
 }
 ul{
 	list-style: none;
+	margin-top: 60px;
+	margin-left: 30px;
 }
 li{
-	margin-top: 10px;
+	margin-top: 20px;
 }
 span{
 	display: inline-block;
@@ -27,13 +33,24 @@ select{
 	position: relative;
 }
 #red{
+	width: 110px;
 	font-size: 12px;
-	color: red;
+	text-align: left;
 	white-space: nowrap;
 	position: absolute;
 	line-height: 24px;
 	left: 250px;
 	top: 0;
-	display: none;
 
+}
+#close{
+	width: 32px;
+	font-size: 16px;
+	border: 1px solid #999;
+	position: absolute;
+	left: 410px;
+	top: 6px;
+}
+#close:hover{
+	cursor: pointer;
 }
