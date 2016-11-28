@@ -82,4 +82,5 @@ $(function(){
 		$('.pic-circle-z-index2').addClass('turn-r');
 	})
 	// 下面是“小额贷款”这里的效果
+	var grow = document.getElementById('grow-list-tit-normal')
 })
