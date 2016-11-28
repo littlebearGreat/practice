@@ -560,7 +560,6 @@ html{
 	width: 1080px;
 	height: 164px;
 	margin: 60px auto 0;
-	outline: 1px solid #000;
 	position: relative;
 }
 /*tab切换样式*/
@@ -647,10 +646,12 @@ html{
 .grow-active2{
 	background: url(../images/grow-list-tit2b.png);
 	left: 390px;
+	display: none;
 }
 .grow-active3{
 	background: url(../images/grow-list-tit3b.png);
 	left: 779px;
+	display: none;
 }
 .grow-list-tit-active .p1{
 	margin-left: 42px;
@@ -678,8 +679,116 @@ html{
 	width: 1080px;
 	height: 208px;
 	margin: 33px auto 0;
-	outline: 1px solid #999;
 }
-.grow-cont ul{
+.grow-cont1{
+	background-color: #1ea846;
+	width: 1080px;
+	height: 208px;
+}
+.grow-cont2{
+	background-color: #1589ff;
+	width: 1080px;
+	height: 208px;
+	display: none;
+}
+.grow-cont3{
+	background-color: #fd7320;
+	width: 1080px;
+	height: 208px;
+	display: none;
+}
+.grow-cont>ul{
 	list-style: none;
+}
+.grow-cont ul li{
+	width: 100px;
+	height: 160px;
+	margin-top: 35px;
+	display: inline-block;
+	margin-left: 125px;
+	vertical-align: middle;
+}
+.grow-cont-list1{
+	margin-left: 40px !important;
+
+}
+.grow-cont span{
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+.grow-cont p{
+	font-size: 20px;
+	line-height: 60px;
+	text-align: center;
+}
+.grow-cont a{
+	text-decoration: none;
+	color: #fff;
+}
+.grow-cont1-list1{
+	background: url(../images/grow-cont1-list1.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont1-list2{
+	background: url(../images/grow-cont1-list2.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont1-list3{
+	background: url(../images/grow-cont1-list3.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont1-list4{
+	background: url(../images/grow-cont1-list4.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont1-list5{
+	background: url(../images/grow-cont1-list5.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont2-list1{
+	background: url(../images/grow-cont2-list1.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont2-list2{
+	background: url(../images/grow-cont2-list2.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont2-list3{
+	background: url(../images/grow-cont2-list3.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont2-list4{
+	background: url(../images/grow-cont2-list4.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont2-list5{
+	background: url(../images/grow-cont2-list5.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont3-list1{
+	background: url(../images/grow-cont3-list1.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont3-list2{
+	background: url(../images/grow-cont3-list2.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont3-list3{
+	background: url(../images/grow-cont3-list3.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont3-list4{
+	background: url(../images/grow-cont3-list4.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont3-list5{
+	background: url(../images/grow-cont3-list5.png) no-repeat;
+	background-size: 100px 100px;
+}
+.grow-cont{
+	position: relative;
+}
+.grow-cont div{
+	position: absolute;
 }
