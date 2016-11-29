@@ -82,5 +82,29 @@ $(function(){
 		$('.pic-circle-z-index2').addClass('turn-r');
 	})
 	// 下面是“小额贷款”这里的效果
-	var grow = document.getElementById('grow-list-tit-normal')
+	var gbox = document.getElementById('grow-list-click-box');
+	var bli = gbox.getElementsByTagName('li');
+	var gNormal = document.getElementById('grow-list-tit-normal');
+	var nli = gNormal.getElementsByTagName('li');
+	var gActive = document.getElementById('grow-list-tit-active');
+	var ali = gActive.getElementsByTagName('li');
+	var gCont = document.getElementById('grow-cont');
+	var cdiv = gCont.getElementsByTagName('div');
+	for (var i = 0; i < bli.length; i++) {
+		bli[i].index = i;
+		nli[i].index = i;
+		ali[i].index = i;
+		cdiv[i].index = i;
+		bli[i].onclick = function(){
+			for (var j = 0; j < nli.length; j++) {
+				nli[j].style.display = 'block';
+				ali[j].style.display = 'none';
+				cdiv[j].style.display = 'none';
+			}
+			nli[this.index].style.display = 'none';
+			ali[this.index].style.display = 'block';
+			cdiv[this.index].style.display = 'block';
+		}
+	}
+
 })

@@ -633,6 +633,21 @@ html{
 	list-style: none;
 	color: #fff;
 }
+#grow-list-click-box{
+	z-index: 10;
+}
+.grow-box1{
+	left: 0;
+}
+.grow-box2{
+	left: 390px;
+}
+.grow-box3{
+	left: 779px;
+}
+#grow-list-click-box li:hover{
+	cursor: pointer;
+}
 .grow-list-tit-active li{
 	position: absolute;
 	width: 301px;
