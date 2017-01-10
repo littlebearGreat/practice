@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>表达式</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="">
+		<div>
+			<p>5加5等于{{5+5}}</p>
+		</div>
+		<div ng-init="a=5;b=6">
+			<p>5乘以6等于{{a*b}}</p>
+		</div>
+		<div ng-init="t='腾';x='讯'">
+			<p>QQ是{{t+x}}给我们的</p>
+		</div>
+		<div ng-init="g='更';h='好'">
+			<p>
+				来一个
+				<span ng-bind="g+h"></span>
+				的方法
+			</p>
+		</div>
+		<div style="background-color: orange">
+			<p>来个对象:</p>
+			<div ng-init="data={name:'小红',sex:'男',age:'0'}">
+				<p>名字：<span ng-bind="data.name"></span></p>
+				<p>性别：<span ng-bind="data.sex"></span></p>
+				<p>年龄：<span ng-bind="data.age"></span></p>
+			</div>
+		</div>
+		<div>
+			<p>来个更复杂的</p>
+			<div ng-init="data2=[{name:'小红',sex:'男',age:'18岁'},{name:'小白',sex:'女',age:'17岁'},{happy:'今天的天气好晴朗',sad:'什么鬼天气'}]">
+				<p>先来个总体看一下<span ng-bind="data2"></span></p>
+				<p>小白的性别：<span ng-bind="data2[1].sex"></span></p>
+				<p>今天高兴的话我会说：<span ng-bind="data2[2].happy"></span></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
