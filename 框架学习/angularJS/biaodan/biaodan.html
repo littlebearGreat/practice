@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>表单练习</title>
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+	<script src="biaodan.js"></script>
+</head>
+<body>
+	<div ng-app="myapp">
+		<form ng-controller="myCtrl">
+			<div>
+				账号：
+				<input type="email" ng-model="userInfo.email">
+			</div>
+			<div>
+				密码：
+				<input type="password" ng-model='userInfo.password'>
+			</div>
+			<div>
+				<input type="checkbox" ng-model='userInfo.autoLogin'>
+				是否自动登陆
+			</div>
+			<div>
+				<button ng-click="one()">账号1</button>
+				<button ng-click="two()">账号2</button>
+				<button ng-click="reset()">恢复</button>
+				<button ng-click="console()">打印</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
