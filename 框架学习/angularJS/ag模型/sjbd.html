@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+	<div ng-controller="ctrl">
+		<input type="text" ng-model='cont'>
+		<p>输入的内容是：<span ng-bind="cont"></span></p>
+	</div>
+</body>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('ctrl',function($scope){
+		$scope.cont = '小白';
+	});
+</script>
+</html>
