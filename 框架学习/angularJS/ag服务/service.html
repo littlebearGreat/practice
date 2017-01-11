@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ag服务</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myctrl">
+		<h1 ng-bind="cont"></h1>
+	</div>
+</body>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('myctrl',function($scope,$timeout){
+		$scope.cont = '你好！';
+		$timeout(function(){
+			$scope.cont = '你开心吗？'
+		},2000);
+		$timeout(function(){
+			$scope.cont = '今天很累啊，但是要开心！';
+		},6000);
+	})
+</script>
+</html>
