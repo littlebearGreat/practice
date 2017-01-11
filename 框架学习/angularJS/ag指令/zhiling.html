@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>指令学习</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="">
+	<div ng-init="name='小红'">
+		<p>输入内容：</p>
+		<input type="text" ng-model='name'>
+		<p ng-bind="name"></p>
+	</div>
+	<div style="background-color: orange"ng-init="dj='0';zl='0'">
+		<p>总价计算器：</p>
+		<span>单价：</span><input type="text" ng-model='dj'><br>
+		<span>重量：</span><input type="text" ng-model='zl'><br>
+		<span>总价：</span><span ng-bind="dj*zl"></span>
+	</div>
+	<div ng-init="arry=[5,6,8,2,4,3,9]">
+		<p>循环一个数组：</p>
+		<p ng-repeat="x in arry" ng-bind="x"></p>
+	</div>
+	<div ng-init="obj=[{f:'苹果',d:'苹果汁'},{f:'橙子',d:'橙汁'},{f:'西瓜',d:'西瓜汁'}]">
+		<ul style="background-color: #FB940E">
+			<li ng-repeat="x in obj" ng-bind="x.f + ' 可以做成 ' + x.d"></li>
+		</ul>
+	</div>
+</body>
+</html>
