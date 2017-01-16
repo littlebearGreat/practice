@@ -1,0 +1,191 @@
+/*登陆框*/
+.box{
+	width: 460px;
+	height: 431px;
+	border: 1px solid #333;
+	/*background-color: orange;*/
+	position: fixed;
+	top: 100px;
+	left: 470px;
+	background:url(../../../images/back.png);
+	margin: 60px auto 0;
+	display: none;
+	font-size: 16px;
+}
+.close{
+	background-color: #171616;
+	color: #fff;
+	position: absolute;
+	left: 420px;
+	top: 10px;
+}
+.close:hover{
+	cursor: pointer;
+}
+.name{
+	margin-top: 104px;
+}
+.name span,
+.pass span,
+.sex span,
+.hobby span,
+.area span{
+	line-height: 38px;
+}
+.name input,
+.pass input{
+	height: 38px;
+	border: 1px solid #999;
+	border-radius: 2px;
+	width: 222px;
+	line-height: 38px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+.box div{
+	margin-left: 82px;
+}
+.pass,.sex,.hobby,.area{
+	margin-top: 10px;
+}
+.btn{
+	width: 96px;
+	height: 40px;
+	margin-left: 112px;
+	margin-top: 40px;
+	background-color: #1f99e4;
+	border: none;
+	border-radius: 2px;
+	font-size: 16px;
+	color: #fff;
+}
+.btn-close{
+	width: 96px;
+	height: 40px;
+	background-color: #5bae19;
+	border: none;
+	border-radius: 2px;
+	margin-left: 34px;
+	font-size: 16px;
+	color: #fff;
+}
+.area select:hover,
+button:hover{
+	cursor: pointer;
+}
+/*修改登陸框*/
+.diqu{
+	display: inline-block;
+	width: 232px;
+	height: 26px;
+	border: 1px solid #999;
+	line-height: 26px !important;
+	/*text-align: center;*/
+	vertical-align: middle;
+}
+.diqu:hover{
+	cursor: pointer;
+}
+.diqu span{
+	display: inline-block;
+	width: 194px;
+	line-height: 26px;
+	text-align: left;
+	padding-left: 10px;
+}
+.area{
+	position: relative;
+}
+.diquC{
+	width: 232px;
+	border: 1px solid #999;
+	position: absolute;
+	left: 72px;
+	top: 35px;
+	display: none;
+	background-color: #fff;
+}
+.diquC li{
+	text-align: left;
+	padding-left: 10px;
+	line-height: 20px;
+}
+.diquC li:hover{
+	cursor: pointer;
+	background-color: #1f99e4;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+/*字体图标，select中的箭头*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.diqu i{
+	display: inline-block;
+	width: 20px;
+	text-align: center;
+}
+.area-box{
+	display: inline-block;
+	width: 224px;
+	height: 28px;
+	margin-left: 0 !important;
+}
+/*修改单选框样式*/
+.sex div,
+.hobby div{
+	display: inline-block;
+	overflow: hidden;
+	height: 20px;
+	width: 40px;
+	margin-left: 0;
+	text-align: center;
+	vertical-align: bottom;
+}
+.hobby div{
+	width: 80px;
+}
+.sex label:hover,
+.hobby label:hover{
+	cursor: pointer;
+}
+.sex input,
+.hobby input{
+	margin-left: -40px;
+}
+.sex span,
+.sex label,
+.hobby span,
+.hobby label{
+	line-height: 20px;
+}
+.sex label,
+.hobby label{
+	margin: 0;
+}
+.sex label,
+.hobby label{
+	padding-left: 40px;
+	background: url(../../../images/check-bac.png) no-repeat;
+}
+.sex label{
+	background-position: 22px 1px;
+}
+.hobby label{
+	background-position: 18px 1px;
+}

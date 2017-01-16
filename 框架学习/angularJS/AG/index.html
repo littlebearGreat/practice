@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<title>AG</title>
 	<link rel="stylesheet" href="style/css/index.css">
+	<link rel="stylesheet" href="style/css/logn/logn.css">
 	<script src="style/js/jquery.min.js"></script>
 	<script src="style/js/angular.min.js"></script>
-	<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
-	<script src="style/js/index.js"></script>
+	<script src="style/js/angular-route.js"></script>
+	<!-- <script src="style/js/index.js"></script> -->
 </head>
 <body ng-app="myapp">
 	<div class="nav">
@@ -30,21 +31,36 @@
 			</div>
 			<div class="sex">
 				<span>性&nbsp;别：</span>
-				<input type="radio" name="sex"><span>男</span>
-				<input type="radio" name="sex"><span>女</span>
+				<div class="sex-nan">
+					<input type="radio" name="sex" id="sex-nan"><label for="sex-nan">男</label>
+				</div>
+				<div class="sex-nv">
+					<input type="radio" name="sex" id="sex-nv"><label for="sex-nv">女</label>
+				</div>
 			</div>
 			<div class="hobby">
 				<span>爱&nbsp;好：</span>
-				<input type="checkbox" name="hobby"><span>听音乐</span>
-				<input type="checkbox" name="hobby"><span>读书</span>
-				<input type="checkbox" name="hobby"><span>跑步</span>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-mu"><label for="hobby-mu">听音乐</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-re"><label for="hobby-re">读书</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-ru"><label for="hobby-ru">跑步</label>
+				</div>
 			</div>
 			<div class="area">
 				<span>地&nbsp;区：</span>
-				<span class="diqu" ng-bind="diqu"></span>
-				<ul class="diquC">
-					<li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li>
-				</ul>
+				<div class="area-box">
+					<span class="diqu">
+						<span ng-bind="diqu"></span>
+						<i class="iconfont">&#xe63c;</i>
+					</span>
+					<ul class="diquC">
+						<li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li>
+					</ul>
+				</div>
 			</div>
 			<button class="btn">确定</button>
 			<button class="btn-close">取消</button>
@@ -63,12 +79,13 @@
 		.otherwise({redirectTo:'/index'});
 	}])
 	// 登陆框控制器
-	app.controller('logn',function($scope){
-		$scope.area = ['深圳','惠州','广州','惠州','广州'];
-		$scope.diqu = '请选择';
-		$scope.diquC = function(data){
-			$scope.diqu = data;
-		}
-	})
+	// app.controller('logn',function($scope){
+	// 	$scope.area = ['深圳','惠州','广州','惠州','广州'];
+	// 	$scope.diqu = '请选择';
+	// 	$scope.diquC = function(data){
+	// 		$scope.diqu = data;
+	// 	}
+	// })
 </script>
+<script src="style/js/logn.js"></script>
 </html>
