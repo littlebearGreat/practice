@@ -1,0 +1,53 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+.nav{
+	width: 100%;
+	min-width: 1400px;
+	height: 82px;
+	background-color:#393d49;
+}
+.nav>a{
+	float: left;
+	text-decoration: none;
+	color: #fff;
+}
+.mark{
+	width: 102px;
+	height: 82px;
+	background: url(../../images/mark.png);
+	margin-left: 100px;
+}
+.index,.page1,.page2,.logn{
+	width: 200px;
+	height: 82px;
+	font-size: 36px;
+	text-align: center;
+	line-height: 82px;
+}
+.index{
+	margin-left: 300px;
+}
+.page1,.page2,.logn{
+	margin-left: 30px;
+}
+.index:hover,
+.page1:hover,
+.page2:hover,
+.logn:hover{
+	background-color: #666;
+}
+.nav a{
+	text-decoration: none;
+	color: #fff;
+}
+.cont{
+	font-size: 16px;
+}
+.cont p{
+	width: 1400px;
+	text-indent: 2em;
+	line-height: 40px;
+}
