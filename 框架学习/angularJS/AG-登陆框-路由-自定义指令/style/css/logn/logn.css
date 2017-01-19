@@ -1,0 +1,175 @@
+  /*登陆框*/
+a{
+	text-decoration: none;
+}
+input{
+	padding: 0;
+	border: 0;
+}
+.box{
+	width: 461px;
+	height: 431px;
+	position: fixed;
+	top: 100px;
+	left: 470px;
+	background:url(../../../images/back.png) no-repeat;
+	margin: 60px auto 0;
+	display: none;
+	font-size: 0;
+}
+/*右上角关闭按钮*/
+/*======================*/
+.close{
+	background-color: #171616;
+	color: #fff;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	left: 430px;
+	top: 10px;
+	font-size: 16px;
+}
+.close:hover{
+	cursor: pointer;
+}
+/*======================*/
+.box div span{
+	font-size: 14px;
+	color: #444;
+	display: inline-block;
+	width: 76px;
+	height: 38px;
+	line-height: 38px;
+	text-align: right;
+	margin-left: 60px;
+	margin-right: 12px;
+}
+.name{
+	margin-top: 100px !important;
+}
+.box div{
+	margin-top: 12px;
+}
+.name input,
+.password input{
+	width: 210px;
+	height: 36px;
+	line-height: 36px;
+	padding-left: 12px;
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	vertical-align: top;
+}
+.passnumb input{
+	width: 70px;
+	padding-left: 12px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	vertical-align: top;
+	outline: none;
+}
+#passpic{
+	width: 100px;
+	height: 35px;
+	margin-left: 12px;
+	margin-right: 0;
+	vertical-align: top;
+	border: 1px solid #ccc;
+}
+.passpic-change{
+	font-size: 14px;
+	color: #1f99e4;
+	padding:12px 0 12px 0;
+}
+.type-box{
+	display: inline-block;
+	height: 48px;
+	width: 222px;
+	margin-top: 10px;
+	vertical-align: top;
+}
+.type-box div{
+	float: left;
+	width: 50px;
+	margin-right: 24px;
+	margin-top: 0;
+	font-size: 14px;
+	text-align: right;
+	position: relative;
+	overflow: hidden;
+	background: url(../../../images/type-back.png) no-repeat;
+	background-position: 0 4px;
+}
+.type-box label{
+	line-height: 24px;
+}
+.type-box input{
+	position: absolute;
+	left: -20px;
+}
+.remember-active{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 12px 0;
+	vertical-align: top;
+	background: url(../../../images/remember-back.png) no-repeat;
+	background-position: 0 0;
+	overflow: hidden;
+}
+.remember-active label{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+}
+.remember-active input{
+	margin-left: -40px;
+}
+.remember{
+	position: relative;
+}
+#auto-login{
+	margin: 0;
+	color: red;
+	width: 100px;
+	line-height: 38px;
+	display: none;
+}
+.remember a{
+	font-size: 14px;
+	color: #1f99e4;
+	padding: 8px 0;
+	line-height: 22px;
+	position: absolute;
+	left: 330px;
+}
+.remember span{
+	vertical-align: top;
+}
+.btn,.btn-close{
+	width: 96px;
+	height: 40px;
+	border-radius: 2px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	margin-top: 10px;
+	padding: 0;
+}
+.btn{
+	background-color: #1f99e4;
+	margin-left: 112px;
+}
+.btn-close{
+	background-color: #5bae19;
+	margin-left: 36px;
+}
+#passpic:hover,
+button:hover{
+	cursor: pointer;
+}

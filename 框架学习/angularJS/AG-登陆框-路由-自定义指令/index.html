@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>AG</title>
+	<link rel="stylesheet" href="style/css/index.css">
+	<link rel="stylesheet" href="style/css/logn/logn.css">
+	<link rel="stylesheet" href="style/css/logn/space.css">
+	<script src="style/js/jquery.min.js"></script>
+	<script src="style/js/angular.min.js"></script>
+	<script src="style/js/angular-route.js"></script>
+	<script src="style/js/logn.js"></script>
+	<script src="style/js/index.js"></script>
+</head>
+<body ng-app="myapp">
+	<div class="nav">
+		<a class="mark" href="#/index"></a>
+		<a class="index" href="#/index">首页</a>
+		<a class="page1" href="#/page1">page1</a>
+		<a class="page2" href="#/page2">page2</a>
+		<a class="logn" href="javascript:;">登陆</a>
+		<a class="space" href="#/space">个人空间</a>
+	</div>
+	<div class="box">
+		<form>
+			<!-- <span class="close">×</span> -->
+			<div class="name">
+				<span>用户名:</span>
+				<input type="text" ng-model='name' placeholder="请输入用户名">
+			</div>
+			<div class="password">
+				<span>密码:</span>
+				<input type="password" ng-model='password' placeholder="请输入密码">
+			</div>
+			<div class="passnumb">
+				<span>验证码:</span>
+				<input type="passnumb" ng-model='passnumb'>
+				<span id="passpic"></span>
+				<a href="javascript:;" class="passpic-change">换一张</a>
+			</div>
+			<div class="type">
+				<span>用户类型:</span>
+				<div class="type-box">
+					<div class="type-qy">
+						<input type="radio" name="type" id="type-qy"><label for="type-qy">区域</label>
+					</div>
+					<div class="type-xx">
+						<input type="radio" name="type" id="type-xx"><label for="type-xx">学校</label>
+					</div>
+					<div class="type-ls">
+						<input type="radio" name="type" id="type-ls"><label for="type-ls">老师</label>
+					</div>
+					<div class="type-xs">
+						<input type="radio" name="type" id="type-xs"><label for="type-xs">学生</label>
+					</div>
+				</div>
+			</div>
+			<div class="remember">
+				<span>记住登陆:</span>
+				<div class="remember-active">
+					<label for="remember-l"></label>
+					<input type="checkbox" name="hobby" id="remember-l">
+				</div>
+				<span id="auto-login">10天自动登陆</span>
+				<a href="javascript:;">忘记密码</a>
+			</div>
+			<button class="btn">确定</button>
+			<button class="btn-close">取消</button>
+		</form>
+	</div>
+	<div class="cont" ng-view></div>
+</body>
+</html>

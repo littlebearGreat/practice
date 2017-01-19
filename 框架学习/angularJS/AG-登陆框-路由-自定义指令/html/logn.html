@@ -1,0 +1,41 @@
+<div class="box" ng-controller="logn">
+		<form>
+			<span class="close">×</span>
+			<div class="name">
+				<span>用户名：</span>
+				<input type="text" ng-model='name' placeholder="请输入用户名">
+			</div>
+			<div class="pass">
+				<span>密&emsp;码：</span>
+				<input type="password" ng-model='password' placeholder="请输入密码">
+			</div>
+			<div class="sex">
+				<span>性&emsp;别：</span>
+				<div class="sex-nan">
+					<input type="radio" name="sex" id="sex-nan"><label for="sex-nan">男</label>
+				</div>
+				<div class="sex-nv">
+					<input type="radio" name="sex" id="sex-nv"><label for="sex-nv">女</label>
+				</div>
+			</div>
+			<div class="hobby">
+				<span>爱&emsp;好：</span>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-mu"><label for="hobby-mu">听音乐</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-re"><label for="hobby-re">读书</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hobby" id="hobby-ru"><label for="hobby-ru">跑步</label>
+				</div>
+			</div>
+			<div class="area">
+				<span>地&emsp;区：</span>
+				<input style="display: none;" id="areaData" type="text" value="深圳,惠州,广州,惠州,广州">
+				<mylogn></mylogn>
+			</div>
+			<button class="btn">确定</button>
+			<button class="btn-close">取消</button>
+		</form>
+	</div>

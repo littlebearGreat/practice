@@ -1,0 +1,89 @@
+/*字体图标，select中的箭头*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.area{
+  margin-top: 100px;
+  margin-left: 100px;
+  position: relative;
+  font-size: 0;
+}
+.area>span{
+  display: inline-block;
+  width: 88px;
+  height: 28px;
+  color: #444;
+  text-align: right;
+  font-size: 14px;
+  line-height: 22px;
+}
+.area>span>span{
+  color: rgb(255,0,0);
+  line-height: 10px;
+  font-size: 12px;
+  vertical-align: top;
+}
+.area-box{
+  width: 160px;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
+.diqu{
+  display: inline-block;
+  width: 158px;
+  height: 26px;
+  border: 1px solid #d3d3d3;
+  color: #444;
+}
+.diqu:hover{
+  cursor: pointer;
+}
+.diqu span{
+  display: inline-block;
+  width: 130px;
+  padding-left: 10px;
+  height: 26px;
+  line-height: 26px;
+  text-align: left;
+  font-size: 14px;
+  vertical-align: top;
+}
+.diqu i{
+  display: inline-block;
+  width: 18px;
+  line-height: 26px;
+  text-align: center;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.diquC{
+  border: 1px solid #d3d3d3;
+  margin-top: -1px !important;
+  display: none;
+}
+.diquC li{
+  width: 150px;
+  height: 24px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+.diquC li:hover{
+  cursor: pointer;
+  background-color: #f4f2f3;
+}
