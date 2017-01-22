@@ -10,59 +10,48 @@
 <body ng-app="myapp">
 	<div class="area"  ng-controller="select">
 		<span>地区<span>*</span>:</span>
-		<input type="hidden" ng-model="ss" id="val" value="province">
+		<input type="hidden" ng-model="ss" id="val" value="{name:di}">
 		<myselect></myselect>
-		<!-- <div class="area-box" id="area-box"> -->
-
-				<!-- <span class="diqu">
-					<span ng-bind="diqu"></span>
-					<i class="iconfont">&#xe63c;</i>
-				</span>
-				<ul class="diquC">
-					<li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li>
-				</ul> -->
-		<!-- </div> -->
+		<!-- <span class="diqu">
+			<span ng-bind="diqu"></span><i class="iconfont">&#xe63c;</i>
+		</span>
+		<input type="hidden" ng-model="diqu" name="selectVal"/>
+		<ul class="diquC">
+			<li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li>
+		</ul> -->
 	</div>
 </body>
 <script>
 // angular
-var app = angular.module('myapp',[]);
-// 个人空间控制器
-	app.controller('select',function($scope){
-		$scope.area = ['河南','焦作','沁阳','柏香','小位'];
-		$scope.diqu = '请选择';
-		$scope.diquC = function(data){
-			$scope.diqu = data;
-		}
-	});
+	var num = ['1','2','3','4','5'];
+	var di = ['河南','焦作','沁阳','柏香','小位'];
+	var app = angular.module('myapp',[]);
 	// 下拉列表自定义指令
 	app.directive('myselect',function(){
-		console.log('111');
 		var str1 = '<div class="myDirectiveBox area-box"><myselectList></myselectList></div>';
 		return{
 			restrict:"ACE",
 			template:str1
 		};
 	});
-
+	var getval;
 	app.directive('myselectlist',function(){
-		var getval = $('.myDirectiveBox').parent().siblings('input').val();
-		var aa = 'ng-bind' + '="' + getval + 'Name"';
-		var bb = 'ng-model' + '="' + getval + '"';
-		var cc = 'ng-repeat' + '="s in' + getval + 's"';
-		console.log(aa);
-		console.log(bb);
-		console.log(cc);
-		// var bbb = document.getElementById('area-box');
-		// console.log(bbb.previousElementSibling.value);
-		var str2 = '<span class="diqu"><span ng-bind="diqu"></span><i class="iconfont">&#xe63c;</i></span><ul class="diquC"><li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li></ul>';
+		getval = $('.myDirectiveBox').parent().siblings('input').val();
+		var str2 = '<span class="diqu"><span ng-bind="diqu"></span><i class="iconfont">&#xe63c;</i></span><input type="hidden" ng-model="diqu" name="selectVal"/><ul class="diquC"><li ng-repeat="x in area track by $index" ng-bind="x" ng-click="diquC(x)"></li></ul>';
 		return{
 			restrict:"ACE",
 			template:str2
 		};
 	});
-	console.log('222');
-
+	// 个人空间控制器
+	app.controller('select',function($scope){
+		var obj = eval("("+getval+")");
+		$scope.area = obj.name;
+		$scope.diqu = '请选择';
+		$scope.diquC = function(data){
+			$scope.diqu = data;
+		}
+	});
 
 	// 下拉框js
 $(function(){
@@ -75,6 +64,7 @@ $(function(){
 	$('.area-box').mouseleave(function(){
 		$('.diquC').slideUp(200);
 	})
+	
 })
 </script>
 </html>
