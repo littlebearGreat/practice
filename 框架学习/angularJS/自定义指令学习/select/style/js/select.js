@@ -23,14 +23,14 @@
 		};
 	});
 	// 个人空间控制器
-	app.controller('select',function($scope){
+	app.controller('select', ['$scope', function($scope){
 		var obj = eval("("+getval+")");// 把获取到的value转换成对象
 		$scope.area = obj.name;
 		$scope.diqu = '请选择';
 		$scope.diquC = function(data){
 			$scope.diqu = data;
 		}
-	});
+	}]);
 
 // 下拉框js点击效果
 $(function(){
