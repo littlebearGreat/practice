@@ -11,8 +11,9 @@
 <body ng-app="myapp">
 	<div class="area"  ng-controller="select">
 		<span>地区<span>*</span>:</span>
-		<input type="hidden" ng-model="ss" id="val" value="{name:di}">
+		<input type="hidden" ng-model="ss" id="val" value="{name:area}">
 		<myselect></myselect>
+		<!-- 上面两行只能改变input中的value中的“di” -->
 	</div>
 </body>
 </html>
