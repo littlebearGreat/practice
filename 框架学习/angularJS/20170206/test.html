@@ -4,10 +4,15 @@
 	<meta charset="UTF-8">
 	<title>test</title>
 	<script src="../angular.min.js"></script>
+	<script src="test.js"></script>
 </head>
-<body ng-app="">
+<body ng-app="myapp">
 	<input type="text" ng-model='txt'>
 	<input type="text" ng-model='txt'>
 	{{txt}}
+	<div ng-controller="timer">
+		<p>现在的时间是：</p>
+		<p ng-bind="time"></p>
+	</div>
 </body>
 </html>
