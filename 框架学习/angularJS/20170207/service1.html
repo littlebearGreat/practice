@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>service自定义服务</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myc">
+	<p>原来的数是：</p>
+	<ul>
+		<li ng-repeat="x in num">{{x}}</li>
+	</ul>
+	<p>转换成二进制：</p>
+	<ul>
+		<li ng-repeat="x in num">{{x|change}}</li>
+	</ul>
+</body>
+<script>
+	var app = angular.module('myapp',[]);
+	app.service('chan', function(){
+		this.func = function(x){
+			return x.toString(2);
+		}
+	});
+	app.filter('change',['chan', function(chan){
+		return function(x){
+			return chan.func(x);
+		}
+	}])
+	app.controller('myc',['$scope',function($scope){
+		$scope.num = [5,16,255]
+	}]);
+</script>
+</html>
