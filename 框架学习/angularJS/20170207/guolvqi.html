@@ -14,5 +14,7 @@
 	<span>单价：</span><input type="text" ng-model='dj'><span> $</span><br>
 	<span>重量：</span><input type="text" ng-model='zl'><span> kg</span><br>
 	<span>总价：<b ng-bind="dj*zl|currency"></b></span>
+	<p>输入英文试试：<input type="text" ng-model='txt'></p>
+	<p>显示出的是：<b ng-bind="txt|uppercase"></b></p>
 </body>
 </html>
