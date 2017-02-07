@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myc">
+	<select name="name">
+		<option ng-repeat="x in names" ng-bind="x"></option>
+	</select>
+</body>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('myc', ['$scope', function($scope){
+		$scope.names = ['小白','小红','小蓝','小彩','小花'];
+	}])
+</script>
+</html>
