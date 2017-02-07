@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>service</title>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myc">
+	<p>此页面的网址是：<span ng-bind="url"></span></p>
+</body>
+<script>
+	var app = angular.module('myapp',[]);
+	app.controller('myc', ['$scope','$location', function($scope,$location){
+		$scope.url = $location.absUrl();
+	}])
+</script>
+</html>
