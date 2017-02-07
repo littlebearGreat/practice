@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器</title>
+	<style>
+		input{
+			text-align: center;
+		}
+	</style>
+	<script src="../angular.min.js"></script>
+</head>
+<body ng-app="">
+	<span>单价：</span><input type="text" ng-model='dj'><span> $</span><br>
+	<span>重量：</span><input type="text" ng-model='zl'><span> kg</span><br>
+	<span>总价：<b ng-bind="dj*zl|currency"></b></span>
+</body>
+</html>
