@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		.box{
+			width: 400px;
+			height: 400px;
+			background-color: red;
+			transition: all linear 1s;
+			position: relative;
+			left: 0;
+			top: 0; 
+		}
+		.ng-hide{
+			height: 0;
+			width: 0;
+			background-color:orange; 
+			left: 200px;
+			top: 200px;
+		}
+	</style>
+	<script src="../angular.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular-animate.min.js"></script>
+</head>
+<body ng-app="myapp">
+	<p>点击试试：<input type="checkbox" ng-model="click"></p>
+	<div class="box" ng-hide="click"></div>
+</body>
+<script>
+	var app = angular.module('myapp',['ngAnimate']);
+</script>
+</html>
