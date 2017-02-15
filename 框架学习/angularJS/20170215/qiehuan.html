@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>切换</title>
+	<style>
+		.box{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+		}
+		ul li{
+			float: left;
+			width: 100px;
+			height: 60px;
+			background: #7B7A7A;
+			font-size: 60px;
+			line-height: 60px;
+			text-align: center;
+		}
+		.mid{
+			margin: 0 50px;
+		}
+		ul li:hover{
+			cursor: pointer;
+		}
+		.n1 .s1,
+		.n2 .s2,
+		.n3 .s3{
+			background: orange !important;
+		}
+		p{
+			line-height: 200px;
+		}
+	</style>
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+	<div class="box" ng-app="">
+		<ul class={{style}}>
+			<li class="s1" ng-click="active = '1';style = 'n1'">1</li>
+			<li class="mid s2" ng-click="active = '2';style = 'n2'">2</li>
+			<li class="s3"  ng-click="active = '3';style = 'n3'">3</li>
+		</ul>
+		<p ng-hide="active">请点击上面</p>
+		<p ng-show="active">点击的是：<b>第<span ng-bind="active"></span>个</b></p>
+	</div>
+</body>
+</html>
