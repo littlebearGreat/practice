@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>动态加载js</title>
+	<link rel="stylesheet" href="style/css/index.css">
+	<script src="style/js/tools/jquery.min.js"></script>
+	<script src="style/js/tools/angular.min.js"></script>
+	<script src="style/js/tools/angular-ui-router.min.js"></script>
+	<script src="style/js/tools/ocLazyLoad.min.js"></script>
+	<script src="style/js/routeConfig/routeConfig.js"></script>
+</head>
+<body ng-app="myapp">
+	<div class="nav">
+		<ul>
+			<li><a href="#/indexcont">首页</a></li>
+			<li><a href="#/p1">文章</a></li>
+			<li><a href="#/p2">弹窗</a></li>
+			<li><a href="#/p3">输入框</a></li>
+			<li><a href="#/p4">other</a></li>
+		</ul>
+	</div>
+	<div class="cont" ui-view='cont1'></div>
+	<div class="cont" ui-view='cont2'></div>
+</body>
+</html>
