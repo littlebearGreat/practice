@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>目标啊</title>
+	<style>
+		div{width: 600px;}
+		th{width: 100px;}
+		th,td{text-align: center;border: 1px solid #ddd;}
+		table{border: 1px solid #ddd;border-collapse: collapse;}
+	</style>
+</head>
+<body>
+	<div ng-app="myMoney" ng-controller="ourMoney">
+		<table>
+			<thead>
+				<tr>
+					<th>Month</th>
+					<th>T</th>
+					<th>Y</th>
+					<th>T+Y</th>
+					<th>Spend</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="x in data">
+					<td ng-bind="x.month"></td>
+					<td ng-bind="x.T"></td>
+					<td ng-bind="x.Y"></td>
+					<td ng-bind="x.T + x.Y"></td>
+					<td ng-bind="x.spend"></td>
+					<td ng-bind="x.total"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="angular.min.js"></script>
+	<script>
+		var app = angular.module('myMoney',[]);
+		app.controller('ourMoney',['$scope',function($scope){
+
+			var data = [
+				{month:7,T:4460,Y:6660,spend:3500,total:35600},
+				{month:8,T:4460,Y:6660,spend:3500},
+				{month:9,T:5000,Y:6660,spend:3500},
+				{month:10,T:5600,Y:6660,spend:3500},
+				{month:11,T:5600,Y:6660,spend:3500},
+				{month:12,T:5600,Y:6660,spend:3500},
+				{month:1,T:5600,Y:6660,spend:3500},
+				{month:2,T:5600,Y:0,spend:1000}
+			];
+
+			$scope.data = data;
+
+			function totle(){
+				// data[0].total = data[0].T + data[0].Y - data[0].spend;
+				for (var i = 0; i < data.length - 1; i++) {
+					data[i + 1].total = data[i + 1].T + data[i + 1].Y - data[i + 1].spend + data[i].total;
+				}
+			};
+			totle();
+		}])
+	</script>
+</body>
+</html>
