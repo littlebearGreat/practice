@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>依于jQuery封装</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/feng.js"></script>
+</head>
+<body>
+	<div class="yy">
+		<ul class="list"></ul>
+		<button class="btn">GO</button>
+	</div>
+</body>
+<script>
+	$(function(){
+		var list = ['红薯','南瓜','冬瓜','西瓜','哇哈哈'];
+		$('.yy').TT({
+			data : list,
+			css : {'color':'orange'},
+			goFn: function() {alert('点击了')}
+		});
+	})
+</script>
+</html>
