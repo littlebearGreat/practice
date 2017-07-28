@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>H5本地存储数据</title>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<input class="ipt" type="text">
+		<button class="btn">提交</button>
+	</div>
+</body>
+<script>
+	$(function(){
+
+		console.log(localStorage);
+		function localData() {
+			var data;
+
+			// 从localStorage中获取数据
+			// var mda = localStorage.moneyData;
+			if (localStorage.moneyData) {
+				data = JSON.parse(localStorage.moneyData);
+			}else{
+				data = new Array();
+			};
+
+			function creat(){
+				if (data.length>0) {
+					var ul = $('<ul>');
+					for (var i = 0; i < data.length; i++) {
+						var li = $('<li>');
+						li.text(data[i]);
+						ul.append(li);
+					};
+					$('.box').children('ul').remove();
+					$('.box').append(ul);
+				};
+			};
+
+			creat();
+
+			$('.btn').click(function(){
+				var txt = $('.ipt').val();
+				$('.ipt').val('');
+				if (!txt) return false;
+				data.push(txt);
+				creat();
+
+				// 存储数据
+				var lda = JSON.stringify(data);
+				localStorage.moneyData = lda;
+				console.log(localStorage);
+			});
+
+		}
+
+		localData();
+	})
+</script>
+</html>
