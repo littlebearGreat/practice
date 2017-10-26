@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>第四章第一个页面</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<button class="confirm">confirm</button>
+	<button class="prompt">prompt</button>
+	<button class="history">history</button>
+	<button class="getLocation">getLocation</button>
+	<button class="changeLocation">changeLocation</button>
+	<button class="reload">重新加载</button>
+<script>
+	$(function(){
+		// confirm()  弹出一个模态框，有两个按钮：是、否，分别返回true false
+		$('.confirm').click(function(){
+			var result = confirm('你开心吗？');
+			if (result) {
+				alert('我也很开心')
+			}else{
+				alert('微笑一下，没有什么大不了，开心起来')
+			}
+		})
+
+		// prompt()  弹出一个模态框，模态框可以输入信息，返回用户输入的内容，如果没有输入或直接关闭，就返回null
+		$('.prompt').click(function(){
+			var result = prompt('可以告诉我你的名字吗？');
+			if (result) {
+				alert('很高兴认识你，' + result);
+			}else{
+				alert('为什么不告诉我呢？');
+			}
+		})
+
+		// window.history浏览器的历史记录
+		$('.history').click(function(){
+			console.log(history);
+		})
+
+		// location对象:当前加载页面的URL信息
+		$('.getLocation').click(function(){
+			console.log(location.href);
+		});
+
+		// 页面跳转到指定链接
+		$('.changeLocation').click(function(){
+			location.href = 'https://www.baidu.com/';
+		})
+
+		// 页面重新加载
+		$('.reload').click(function(){
+			location.reload(true);
+		})
+
+	})
+</script>
+</body>
+</html>
