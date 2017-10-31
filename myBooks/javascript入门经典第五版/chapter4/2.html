@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>with用法</title>
+</head>
+<body>
+<script>
+	function withTest(){
+		var Method = {
+			add: function(m,n){
+				return (m + n);
+			},
+			subtraction: function(m,n){
+				return (m - n);
+			},
+			multiplication: function(m,n){
+				return (m * n);
+			},
+			division: function(m,n){
+				return (m / n);
+			},
+			number: 10,
+			string: 'string'
+		};
+
+		with(Method){
+			console.log(add(1,2));
+			console.log(subtraction(1,2));
+			console.log(multiplication(2,2));
+			console.log(division(9,2));
+			console.log(number);
+			console.log(Method.string);
+		};
+	};
+	withTest();
+</script>
+</body>
+</html>

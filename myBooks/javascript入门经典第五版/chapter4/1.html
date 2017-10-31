@@ -59,6 +59,72 @@
 			location.reload(true);
 		})
 
+
+		// Date对象
+		function date1(){
+			var mydate = new Date();
+			console.log(mydate.getDay());
+			mydate.setDate(5);
+			console.log(mydate.getDay());
+			console.log(mydate.toLocaleDateString());
+			console.log(mydate.toLocaleTimeString());
+		}
+
+		date1();
+
+
+		// Math对象
+		// 取0-n之间的随机整数数
+		function random(n){
+			var result = Math.round(Math.random() * n);
+			console.log(result);
+		}
+		random(8);
+
+		// 圆周率
+		console.log(Math.PI);
+
+
+		// 关键字width
+		function withTest(){
+			var Method = {
+				add: function(m,n){
+					return (m + n);
+				},
+				subtraction: function(m,n){
+					return (m - n);
+				},
+				multiplication: function(m,n){
+					return (m * n);
+				},
+				division: function(m,n){
+					return (m / n);
+				},
+				number: 10,
+				string: 'string'
+			};
+
+			with(Method){
+				console.log(add(1,2));
+				console.log(subtraction(1,2));
+				console.log(multiplication(2,2));
+				console.log(division(9,2));
+				console.log(number);
+				console.log(Method.string);
+			}
+		};
+		withTest();
+
+		/** with的用法：
+		 *	语法：	
+		 *			with(object){
+		 *				jsvascript代码
+		 *			};
+		 *
+		 *	参数：一个对象，必须是一个对象，假设这个对象是obj
+		 *	在{}中的js代码要调用obj中的值，可以直接写键名,因为js会假定这些方法是属于作为参数的那个对象
+		 */
+
 	})
 </script>
 </body>
