@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>1</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	$(function(){
+		// 处理字符串、数组的一些方法
+
+		// javascript全局函数
+		/**
+		 *	isNaN(x)
+		 *	判断参数是不是 不是数字（或者不是数字的字符串） 如果不是数字，返回true;是数字，返回false
+		 */
+		console.log(isNaN('12js'))
+
+		/**
+		 *	parseFloat()
+		 *	可解析一个字符串，如果参数的首个字符是数字，则解析到数字结束，返回解析到的数字（Number格式），否则返回NaN
+		 */
+		console.log(parseFloat('5.26tianqi'));
+		console.log(parseFloat('tianqi525'));
+
+		/**
+		 *	parseInt(string,radix)
+		 *	可解析一个字符串，并返回一个整数。第二个参数用于以什么进制来解析string，如果不写，默认以十进制解析,返回的都是十进制数字
+		 */
+		console.log(parseInt(9.25));	/*以十进制来解析9.25*/
+		console.log(parseInt(101,2));	/*以二进制来解析101，返回5*/
+		console.log(parseInt('9.25int'));
+
+		/*
+		 *	isFinite(x)
+		 *	可判断一个数值是否为无穷大。如果x不是数字、x为无穷大、x为无穷小，返回false；否则返回true
+		 */
+		console.log(isFinite('jintian'));
+		console.log(isFinite(9.25));
+
+		/*
+		 *	转义序列
+		 *	以反斜线（\）开头的字符组合，js会把该字符解析为字符串
+		 */
+		console.log('今天是个好天气，\'今天\'的\'今\'')
+
+		/*
+		 *	NaN null undefined三者比较
+		 *	NaN  		非数值    	js尝试把一些非数值数据当做数值处理，无法得到数值时返回值就是NaN
+		 *	null 		空			想定义一个变量，又不确定其值的时候，就可以把null赋给变量
+		 *	undefined 	未定义		undefined不是关键字，而是预定义的全局变量。当某个变量已经在语句中使用了，但却没有被赋予任何值时，
+		 *							它的值不是0或null，而是undefined，表示javascript不能识别它
+		 */
+
+		/*
+		 *	join()
+		 *	把数组的所有元素放入一个字符串中，返回该字符串。可以传入一个用于间隔的字符串。如果不传，则以逗号分隔
+		 */
+		var array1 = [1,2,3,4,5,6]
+		console.log(array1.join());
+
+		var arrayDate = [2017,11,01];
+		console.log(arrayDate.join('-'));
+
+		/*
+		 *	indexOf()	（string中也有一个indexOf()方法）
+		 *	用于索检(第一次出现的位置) 如果找到，就返回其位置；如果没找到，就返回 -1
+		 */
+		var array2 = [1,2,3,1,2,5,6];
+		console.log(array2.indexOf(3));
+		console.log(array2.indexOf(7));
+
+	})
+</script>
+</html>
