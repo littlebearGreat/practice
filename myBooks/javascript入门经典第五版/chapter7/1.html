@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象编程</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<button class="showInfo">showInfo</button>
+	<button class="changeFriendAge">修改朋友的年龄</button>
+</body>
+<script>
+	$(function(){
+		var Method = new Object();
+		Method.showInfo = showInfo;
+
+		function showInfo(){
+			console.log(this);
+		};
+
+		Method.info = 'info';
+
+		$('.showInfo').click(function(){
+			Method.showInfo();
+		})
+
+		/**
+		 *	构造函数
+		 *	1. 	var obj = new Object(); 这样可以创建一个对象，但是对象是空的，没有任何属性。
+		 *		个人理解：Object应该是个空函数，所以创建的对象是个空对象。
+		 *	2. 	我们也可以写个函数，类似于Object，但是我们会在函数中写一些方法来创建一些属性，
+		 *		如下面的 creat 函数。(Object是构造函数，creat也是构造函数)
+		 *	3.	然后我们如 	var obj = new Object();一样，来使用我们的构造函数创建一个新对象：
+		 *					var myFriends = new creat(); 这个对象中有构造函数中定义的全部属性和方法。
+		 *
+		 *	4.	《JavaScript入门经典（第5版）》一书中是这样说的：
+		 *				这里使用的语法与 new Object() 相同，只是用预先定义的对象类型代替了javascript通用
+		 *				的Object，这样实例化的对象具有构造函数里定义的全部属性和方法。
+		 */
+		function creat(){
+			this.name = '小红';
+			this.age = 18;
+			this.sex = '女';
+			this.changeAge = function(newAge){
+				this.age = newAge;
+			}
+		};
+
+		var myFriend1 = new creat();
+		var myFriend2 = new creat();
+		console.log(myFriend1);
+		console.log(myFriend2);
+
+		$('.changeFriendAge').click(function(){
+			myFriend1.changeAge(20);
+			console.log(myFriend1);
+			console.log(myFriend2);
+		})
+
+
+		/**
+		 *	构造函数也可以传参
+		 *	我们在创建对象的时候就能使对象拥有我们想要的属性或方法
+		 */
+		function creat1(name,age,sex){
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+			this.showInformation = function(){
+				console.log(this.name + '，' + this.age + '岁，' + this.sex);
+			}
+		}
+
+		var xiaohong = new creat1('小红',18,'女');
+		var xiaobai = new creat1('小白',199,'男');
+		console.log(xiaohong);
+		console.log(xiaobai);
+		xiaohong.showInformation();
+		xiaobai.showInformation();
+
+		/**
+		 *	prototype 扩展对象
+		 *	已经创建好的对象没有任何改变，但却拥有了新属性（方法）
+		 */ 
+		creat1.prototype.likeFruit = '苹果';
+		console.log(xiaohong.likeFruit);
+		console.log(xiaobai);
+
+
+		console.info('============prototype 继承==================');
+		/**
+		 *	prototype 继承
+		 *		解释：比如，我们之前已经写好一个构造函数了，但是现在需要添加一些新的属性或方法，
+		 *			这时就可以使用 prototype
+		 */
+
+		// 先创建一个构造函数
+		function pet(animal,petName){
+			this.animal = animal;
+			this.name = petName;
+		};
+
+		var dog = new pet('dog','旺财');
+		console.log(dog);
+
+		// 再创建一个构造函数，定义新属性（方法）
+		function newPet(age){
+			this.age = age;
+		};
+
+		var pet1 = new newPet(2);
+		console.log(pet1);
+
+		// 进行继承
+		newPet.prototype = new pet('狗','大黄');
+		
+		console.log(pet1);
+		console.log(pet1.name);
+
+		var pet2 = new newPet(3);
+		console.log(pet2);
+		console.log(pet2.name);
+
+		/**
+		 *	prototype  总结扩展与继承
+		 *	1. 	扩展：给已经存在的构造函数添加一些新的方法
+		 *		继承：新的构造函数继承已经存在的某个构造函数（中的属性和方法）。
+		 *	2.	扩展或继承后，构造的对象console.log()不会改变，但是已经拥有方法与属性。
+		 *		个人猜测：构造出的对象不变，但是多了指向
+		 *	3.	扩展：已经创建出的对象，在构造函数扩展后，对象拥有扩展的属性和方法。
+		 *		继承：经过调试得知，构造函数继承后，在继承前创建的对象不拥有继承的属性，
+		 *				在继承后创建的对象拥有继承的属性。
+		 *	4.	继承应该是扩展的一种延伸，构造函数可以扩展属性和方法，扩展是每次扩展一个属性或方法；
+		 *		继承则是每次扩展一个对象。 
+		 *		如： newPet.prototype = new pet('狗','大黄'); 等号右边不就是一个对象嘛。
+		 */
+
+
+
+
+
+
+
+
+		
+
+	})
+</script>
+</html>
