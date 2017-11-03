@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>第八章-JSON</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	$(function(){
+
+		console.info('=========eval()解析JSON字符串============================');
+		/**
+		 *	eval()
+		 *	使用 eval() 解析JSON字符串
+		 *	要解析的字符串必须包含在括号里，避免造成含义不明确的javascript语法。
+		 *	如： eval('(' + string + ')')
+		 */
+		function evalJson(){
+			var str = '{"name":"小白","age":18,"sex":"男"}';
+			var obj = eval('(' + str + ')');
+			console.log(str);
+			console.log(obj);
+			console.log(typeof obj);
+		}
+		evalJson();
+
+
+		console.info('=========JSON.parse()解析JSON字符串============================');
+		/**
+		 *	JSON.parse()
+		 *	使用 JSON.parse() 解析JSON字符串
+		 *	
+		 */
+		function jsonparseJson(){
+			var str = '{"name":"小白","age":18,"sex":"男"}';
+			var obj = JSON.parse(str);
+			console.log(str);
+			console.log(obj);
+			console.log(typeof obj);
+		}
+		jsonparseJson();
+
+		/**
+		 *	eval()与JSON.parse()比较：
+		 *	1.	eval() 能够执行任何的javascript命令，这可能会导致潜在的安全问题，特别是处理来源不明的JSON数据时
+		 *	2.	JSON.parse() 是JSON解析器，只识别JSON文本，只能把JSON字符串解析为JSON对象，不执行脚本命令，相对安全。
+		 *	3.	JSON.parse() 比 eval() 的速度快一些。
+		 */
+
+
+		console.info('=========JSON.stringify()把JSON对象格式化为字符串============================');
+		/**
+		 *	JSON.stringify()
+		 *	使用 JSON.stringify() 把JSON对象格式化成JSON字符串
+		 *	此行为叫做：JSON的数据序列化
+		 */
+		 function stringJson(){
+		 	var obj = {"name":"小白","age":18,"sex":"男"};
+		 	var str = JSON.stringify(obj);
+			console.log(obj);
+		 	console.log(str);
+			console.log(typeof str);
+		 }
+		 stringJson();
+
+
+	})
+</script>
+</html>
