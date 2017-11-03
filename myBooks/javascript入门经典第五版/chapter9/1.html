@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>响应事件</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<button class="event">event</button>
+</body>
+<script>
+	$(function (){
+
+		/**
+		 *	事件处理器：
+		 *	其实就是我们给点击事件、加载事件、鼠标事件等等添加的函数（方法）
+		 *	1.	一般情况下，特定HTML元素事件处理器是在元素默认操作之前执行的
+		 *		例如：a标签，给a标签添加一个点击事件，当用户点击的时候，会先执行我们的点击事件，再跳转
+		 *	2.	我们也可以阻止默认事件发生。在事件中返回 false 即可
+		 *		例如：阻止a标签点击后跳转，在点击事件中返回 false 即可
+		 */
+
+
+		$('.event').click(function(cc,b){
+			console.log(cc);
+			console.log(b);
+		})
+	})
+</script>
+</html>
