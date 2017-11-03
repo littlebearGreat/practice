@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javascript和cookie</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	$(function(){
+
+		/**
+		 *	数据的编码和解码：
+		 *	某些字符不能再cookie里使用，包括分号、逗号及空白符号（比如空格和制表符）。
+		 *	在把数据存储到cookie之前，需要对数据进行编码，以便实现正确的存储。
+		 *	1.	在存储信息之前，使用javascript的 escape() 函数进行编码。
+		 *	2.	在获得原始的cookie数据时，使用 unescape() 函数进行解码。
+		 */
+
+		function esc(string){
+			var result = escape(string);
+			console.log(result);
+			return result;
+		}
+		esc('x');
+		console.log(unescape(esc('&nbsp;')))
+
+		var d = new Date(2017,10,03);
+		console.log(d);
+		console.log(d.toUTCString())
+		var coo ="name=" + esc('中国');
+		console.log(coo);
+		document.cookie = "username=xx";
+	})
+</script>
+</html>
