@@ -6,10 +6,14 @@
 	<script src="../jquery.min.js"></script>
 </head>
 <body>
-	
+	<button class="creat">生成cookie</button>
+	<button class="get">读取cookie</button>
+	<div class="cookieShow"></div>
 </body>
 <script>
 	$(function(){
+
+		// 在服务器环境下才能生成cookie，否则浏览器会阻止
 
 		/**
 		 *	数据的编码和解码：
@@ -30,9 +34,51 @@
 		var d = new Date(2017,10,03);
 		console.log(d);
 		console.log(d.toUTCString())
-		var coo ="name=" + esc('中国');
+		var coo = esc(12345);
 		console.log(coo);
-		document.cookie = "username=xx";
+		document.cookie = "xiaobai=" + coo;
+
+
+
+		// 生成cookie
+		function creatCookie(name,value,days){
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				var expires = date.toGMTString();
+			}else{
+				var expires = '';
+			};
+			var cookieString = name + '=' + escape(value);
+			if (expires) {
+				cookieString += ';expires=' + expires;
+			};
+			console.log(cookieString);
+			document.cookie = cookieString;
+		};
+		$('.creat').click(function(){
+			creatCookie('小花','17岁，女，喜欢香蕉',3)
+		})
+
+		// 读取cookie
+		function getCookie(name){
+			var str = document.cookie;
+			var array = str.split('; ');	/*发现在火狐浏览器与谷歌浏览器下，读取出来的cookie用分号加空格隔开。IE下没有测试。注意！！！*/
+			var nameCook = name + '=';
+			for (var i = 0; i < array.length; i++) {
+				if (array[i].indexOf(nameCook) == 0) {
+					var result = unescape(array[i]);
+					console.log(result);
+					return result;
+				};
+			};
+		};
+
+		$('.get').click(function(){
+			var text = getCookie('小花');
+			$('.cookieShow').text(text);
+		})
+
 	})
 </script>
 </html>
