@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>遍历DOM</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<ul id="fruits">
+		<li>苹果</li>
+		<li>香蕉</li>
+		<li>榴莲</li>
+	</ul>
+<script>
+	window.onload = function(){
+
+		/**
+		 *	childNodes  子节点
+		 */
+
+		var fruitsTags = document.getElementById('fruits');
+		var childTags = fruitsTags.childNodes;
+		console.log(childTags);
+		var nodeTypeArray = [];
+		for (var i = 0; i < childTags.length; i++) {
+			nodeTypeArray.push(childTags[i].nodeType);
+		}
+		console.log(nodeTypeArray);
+	}
+</script>
+</body>
+</html>
