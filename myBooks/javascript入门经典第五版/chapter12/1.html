@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>使用脚本操作DOM</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<p class="p">今天是个好天气</p>
+	<input class="ipt" type="text" placeholder="输入想要设置的title属性的值">
+	<button class="set">SET</button>
+	<h3>动态加载js</h3>
+	<p class="changeColor">点击此处，加载js，并改变此行文字颜色</p>
+	<button class="alert">弹个窗口出来</button>
+<script>
+	$(function(){
+		/**
+		 *	本章讲了一些dom的操作方法
+		 *	appendChild();		div.appendChild(p);			把p插入div子节点的末尾
+		 *	insertBefore();		div.insertBefore(newP,P);	把newP插入div中，并且放在p的前面
+		 *	replaceChild();		div.replaceChild(newP,oldP);	把newP替换oldP
+		 *	removeChild();		div.removeChild(p);			把div的一个子节点p删除
+		 *	以上方法都是操作父元素的子元素
+		 *
+		 *	getAttribute();		p.getAttribute('title');	获取p的title属性值
+		 *	setAttribute();		p.setAttribute('title','value');	设置p的title属性值为value
+		 */
+
+		/*example:*/
+		function setTitle(){
+			var text = $('.ipt').val();
+		 	$('.p')[0].setAttribute('title',text);
+		};
+		$('.set').click(function(){
+		 	setTitle();
+		});
+
+		/**
+		 *	动态加载js
+		 *	onload事件
+		 *	onload事件会在页面或图像加载完成后立即发生
+		 *	支持该事件的标签：<body>, <frame>, <frameset>, <iframe>, <img>, <link>, <script>
+		 *	动态加载js,因为浏览器限制，只能在服务器环境下运行
+		 */
+		$('.changeColor').click(function(){
+			var scr = $('<script>');
+			scr.attr('src','1.js');
+			$('body').append(scr);
+
+			// scr加载完成后执行脚本中的函数、或者在脚本的最后执行脚本函数
+			// scr.load = outJs();
+		})
+
+
+
+	})
+</script>
+</body>
+</html>
