@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>良好的编程习惯</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<div class="btnBox">
+		<input class="btn1" type="button" value="button">
+		<input class="btn2" type="submit" value="submit">
+	</div>
+<script>
+	$(function(){
+		/**
+		 *	平稳退化、渐进增强
+		 *		1.btnBox中两个提交按钮，虽然页面上显示相同，但是btn2比btn1好。
+		 *		  因为：btn1的提交功能得用Js来写，
+		 *				如果页面禁用了js功能，btn1就无法提交，但是btn2依然可以提交
+		 **/
+
+		/**
+		 *	使用try和catch
+		 *	try中可以写一些可能错误的代码，在catch中可以捕获到try中的错误。
+		 *	注意：try后面必须跟catch，他俩是一个整体
+		 **/
+		function test(){
+			try{
+				console.log(a);
+			}catch(err){
+				console.log(err);
+			};
+		}
+		test();
+	})
+</script>	
+</body>
+</html>
