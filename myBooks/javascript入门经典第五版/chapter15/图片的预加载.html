@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>图片的预加载</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+	$(function(){
+
+		/**
+		 *	思路：
+		 *		实例化一个img对象，当这个对象被传入地址的时候就会加载图片
+		 *		我们可以用for循环，把我们所有需要的图片地址全部传一遍
+		 *		这样，我们需要的图片就会全部存在缓存中，用户体验会提升
+		 *		但是，何时加载图片？
+		 **/
+
+		var img = new Image();
+		var imgSrc = new Array();
+		imgSrc[0] = "images/1.jpg";
+		imgSrc[1] = "images/2.jpg";
+		for (var i = 0; i < imgSrc.length; i++) {
+			img.src = imgSrc[i];
+		}
+	})
+</script>
+</body>
+</html>
