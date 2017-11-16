@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ajax1</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<!-- 原生js写的ajax -->
+	<div class="box1">
+		<h1>原生js写的ajax</h1>
+		<button class="btn1">获取数据</button>
+		<p>
+			数据内容：
+			<span></span>
+		</p>
+	</div>
+
+	<!-- jQuery写的ajax -->
+	<div class="box2">
+		<h1>jQuery写的ajax</h1>
+		<button class="btn2">获取数据</button>
+		<p>
+			数据内容：
+			<span></span>
+		</p>
+	</div>
+<script>
+	$(function(){
+
+		/*原生js*/
+		/*没写成功==========================================================*/
+		function getXMLHttpRequest(){
+			try{
+				try{
+					return new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch(e){
+					return new ActiveXObject("Msxm12.XMLHTTP");
+				}
+			}
+			catch(e){
+				return new XMLHttpRequest();
+			}
+		};
+
+		function callAjax(){
+			console.log('1111');
+			var url = "data/data1.data";
+			var myRandom = parseInt(Math.random()*99999999);
+			myRequest.open("GET",url,true);
+			myRequest.onreadstatechange = responseAjax;
+			myRequest.send(null);
+		};
+
+		function responseAjax(){
+				console.log('成功');
+			if (myRequest.readyState == 4) {
+				if (myRequest.status == 200) {
+					// 请求成功
+					var data = data;
+					console.log(data);
+				}
+			}
+		};
+
+		var myRequest = getXMLHttpRequest();
+
+		$('.btn1').click(function(){
+			callAjax();
+		})
+		/*没写成功==========================================================*/
+
+
+		// jquery  ajax  (静态文件响应不被post允许，用get可以)
+		$('.btn2').click(function(){
+			$.get("data/data1.data",function(data,status){
+				console.log(data);
+				console.log(status);
+				$('.box2 span').text(data);
+			})
+		})
+	})
+</script>
+</body>
+</html>
