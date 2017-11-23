@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+<script>
+	$(function(){
+
+		// 教程链接		http://www.cnblogs.com/wangfupeng1988/p/3977924.html
+
+		// 前6节
+		function class1_6(){
+
+			console.log(typeof($));
+
+			function f1(){
+				console.log('f1')
+			}
+
+			console.log(typeof(f1));
+			console.log(f1);
+			f1.nnn = "小花";
+			console.log(typeof(f1));
+			console.log(f1);
+			console.log(f1.nnn);
+			console.log(f1.prototype);
+			console.log(Object.prototype);
+
+			function f2(){
+				console.log('f2')
+			};
+			f2.prototype.name = "小红";
+			console.log(f2.prototype);
+			console.log($.attr);
+
+			function f3(){
+				console.log('f3');
+			};
+			console.log(f3);
+			f3.prototype.name = '小花';
+			console.log(f3.prototype.name);
+			console.log(f3.name);
+
+			function Fun1(){
+				Fun1.prototype.name = '小花';
+				Fun1.prototype.getYear = function(){
+					return 2017;
+				};
+				this.getName = function(){
+					return '小红';
+				};
+			};
+
+			var f4 = new Fun1();
+			console.log(f4);
+			// console.log(f4.prototype.name);
+			console.log(f4.name);
+			console.log(f4.getYear());
+			console.log(f4.getName());
+
+			console.log('========================================');
+			/**
+			 *	1.	每个函数都有一个属性叫prototype,prototype的属性值是个对象，有个默认的属性constructor,指向这个函数本身;
+			 *	2.	每个对象都有一个 __proto__，可称为隐式原型,指向创建该对象的函数的prototype
+			 *	3.	Object是个函数，它的prototype的__proto__指向空(null)
+			 *
+			 *	4.	访问一个对象的属性时，现在基本属性中查找，如果没有，再沿着__proto__这条链向上找，这就是原型链.
+			 *
+			 *	5.	hasOwnProperty("属性名");	语法：obj.hasOwnProperty("sss");  
+			 *			检测obj对象是否有一个自身属性："sss"，是则返回true,否则返回false。
+			 *			该方法检测不到从原型链上继承的属性。
+			 *	6.	isPrototypeOf();	语法：obj1.isPrototypeOf(obj2);
+			 *			检测obj1是否为obj2的原型，是则返回true,否则返回false。
+			 **/
+			console.log(typeof(Object));
+
+
+
+			function Ob(){
+				this.color = 'red';
+			};
+
+			var b1 = new Ob();
+			console.log(b1.sex);	/*undefined*/
+
+			Ob.prototype.sex = '女';
+			console.log(b1.sex);	/*女*/
+
+			var b2 = new Ob();
+			console.log(b2.sex);	/*女*/
+			/*此结果说明：new对象与原型的prototype是没有先后顺序的,但是函数的运行是有先后顺序的*/
+
+			console.log(Object.prototype);
+			console.log(Function.prototype);
+
+			var b = {a:1,b:2};
+			var c = [1,2,true];
+			console.log(b.toString());
+			console.log(typeof(b.toString()));
+			console.log(c.toString());
+		};
+		class1_6()
+
+		// 第7节----原型的灵活性
+		function class7(){
+			var a = [1,2,true];
+			console.log(a.toString());
+
+			var b = {a:1};
+			console.log(b.toString());
+
+			/*可以自定义一个函数并且去修改toString方法*/
+
+			function Fun1(){
+				this.a = 2;
+			};
+			var c = new Fun1();
+			console.log(c);
+			console.log(c.toString());
+			Fun1.prototype.toString = function(){
+				return '小花';
+			};
+			console.log(c.toString());
+		};
+		class7();
+
+		// 第8节----执行上下文(上)
+		function class8(){
+
+			/**
+			 *	==============================================================================
+			 *	在一段js代码拿过来真正一句一句执行之前，浏览器已经做了一些“准备工作”，
+			 *	其中就包括了对变量的声明，但没有赋值。（如下一行代码,a是错误，b是undefined）
+			 *	变量的赋值是在赋值语句执行的时候进行的。
+			 **/
+
+			/*console.log(a);*/		/*a is not defined*/
+			console.log(b);		/*undefined*/
+			var b = 10;
+
+			console.log(this);	/*console出的结果是有值的*/
+
+			/*上面是两种现象*/
+
+			/**
+			 *	===============================================================================
+			 *	函数表达式与函数声明：
+			 *	函数表达式：var a = function(){};
+			 *	函数声明： function b(){};
+			 *	也就是函数的两种写法。
+			 *	但是这两种写法，js是区别对待的.(如下面两个例子：f1  f2)
+			 **/
+
+			 console.log(f1);	/*结果是整个函数		把整个函数赋值了*/
+			 function f1(){		/*函数声明*/
+			 	alert('aaa');
+			 };
+
+			 console.log(f2);		/*undefined		只是声明f2*/
+			 var f2 = function(){	/*函数表达式*/
+			 	alert('bbb');
+			 };
+		};
+		class8();
+
+		// 第9节----执行上下文(下)
+		function class9(){
+
+			/**
+			 *	arguments  
+			 *	1.	js中每个函数都会有一个Arguments对象实例arguments，
+			 *		它引用着函数的实参，实参放在一个数组中，argument.length就是实参的个数
+			 *	2.	说白了就是：每个函数都有一个方法，是arguments，以数组格式返回函数的实参
+			 *	3.	下面例子可以看出：在   函数中的语句   执行之前，函数中的参数都已经被赋值（而不是在执行时才赋值）
+			 **/
+			function f1(x){
+				console.log(arguments);
+				console.log(x);
+			};
+			f1(10);
+		};
+		class9();
+
+		// 第10节----this
+		function class10(){
+
+			// 在函数中，this到底取何值？下面，来进行说明（分4中情况）:
+
+			// 在函数中，this到底取何值，是在函数真正被调用执行的时候确定的，函数定义的时候确定不了！！！
+
+			/**
+			 *	情况1==================================================================================
+			 *	构造函数：
+			 *	所谓构造函数，就是用来new对象的函数。
+			 *	严格来讲，所有的函数都可以new一个对象，但是有些函数的定义是为了new对象，而有些则不是。
+			 *	注意：构造函数的函数名第一个字母大写（规则约定），如Object、Array、Function等。
+			 *
+			 *	结论：如果函数作为构造函数用，函数中的this就代表它即将new出来的对象。（父对象）
+			 *			在整个原型链中，this都指向new出来的对象
+			 **/
+			function Fun1(){
+				this.name = '小花';
+				this.age = 18;
+
+				console.log(this);
+			};
+
+			var a1 = new Fun1();
+			console.log(a1);
+
+
+			/**
+			 *	情况2=================================================================================
+			 *	函数作为对象的一个属性：
+			 *	如果函数作为对象的一个属性时，并且作为对象的一个属性被调用时，函数中的this指向该对象。（父对象）
+			 *	如例子1
+			 *
+			 *	注意：如果函数不作为对象的一个属性被调用，结果就不同了
+			 *	如例子2，函数被赋值给了b2，没有作为a2的一个属性被调用，此时this指向window
+			 **/
+
+			var a2 = {
+				a: 2,
+				f: function(){
+					console.log(this);
+					console.log(this.a);
+				}
+			};
+
+			// 例子1
+			a2.f();
+
+			// 例子2
+			var b2 = a2.f;
+			b2();
+
+
+			/**
+			 *	情况3==================================================================
+			 *	当一个函数被call和apply调用时，this指向传入的参数
+			 **/
+			 var a3 = {
+			 	a:2,
+			 	b:'fff'
+			 };
+			 function f3 (){
+			 	console.log(this);
+			 };
+			 f3.call(a3);
+			 // call方法：说白了就是把函数f3在a3中走一遍
+
+
+			/**
+			 *	情况4==================================================================
+			 *	全局函数、调用普通函数
+			 *	在全局环境下，this永远指向window
+			 *	普通函数调用时，其中的this也指向window
+			 **/
+		};
+		class10();
+
+		// 第11节----执行上下文栈
+		function class11(){
+			// 就是js执行的详细步骤
+		};
+
+		// 第12节----作用域
+		function class12(){
+
+			/**
+			 *	1.	js除了全局作用域外，只有函数可以创建的作用域。
+			 *	2.	在声明变量时，全局代码要在代码前面声明。函数中要在函数一开始就声明好。
+			 **/
+
+			for (i = 0; i < 10; i++) {
+				
+			};
+			console.log(i);	/*可以获取到i*/
+		};
+		class12();
+
+		// 第13节----作用域 和 上下文环境
+		function class13(){
+			/**
+			 *	1.	作用域在函数定义时就已经确定了，而不是在函数调用时确定
+			 *	2.	作用域中变量的值是在执行过程中确定的，作用域是在函数创建时就确定了。
+			 **/
+		};
+		class13();
+
+		// 第14节----从  自由变量  到  作用域链
+		function class14(){
+
+			/**
+			 *	1.	自由变量：
+			 *		解释：	在A作用域中使用的变量x，却没有在A作用域中声明（在其他作用域中声明的），
+			 *				对于A作用域来说，x就是自由变量。
+			 *		如例子： f1
+			 *	2.	取自由变量时要到另一个作用域中取，到哪个作用域中取呢？
+			 *		答案：到  创建  这个函数的那个作用域中取值（无论函数在哪里调用）。
+			 *		这就是所谓的静态作用域。
+			 *	3.	找自由变量的过程（路径）就是作用域链。
+			 **/
+
+			 function f1(){
+			 	var x = 10;
+			 	function f11(){
+			 		var b = 20;
+			 		console.log(x + b);		/*x就是函数f11作用域的一个自由变量*/
+			 	};
+			 };
+		};
+		class14();
+
+		// 第15节----闭包
+		function class15(){
+
+			/**
+			 *	闭包：
+			 *	1.	闭包的概念：  （作者不好解释，就没解释....）
+			 *	2.	闭包应用的两种情况：
+			 *		a: 	函数作为返回值
+			 *		b: 	函数作为参数被传递
+			 *	3.	个人理解：闭包保护数据不被销毁，拿第一个例子来说，可能就在与，执行完 var f2 = fn1() 后,fn1的上下文环境是不能被
+			 *					销毁的，因为fn1还返回出一个函数f11，f11中有需要用到fn1中的变量a，保护数据估计指的是保护变量a吧。
+			 *					f2(30) 执行完，才能销毁。
+			 *	4. 	使用闭包，是要增加开销的（内存、性能的开销， 因为有些函数的执行上下文不能立即被销毁）
+			 **/
+
+			// 1.函数作为返回值
+			function f1(){
+
+				function fn1(){
+					var a = 20;
+					return function f11(x){
+						if (x > a) {
+							console.log(x + a);
+						};
+					};
+				};
+
+				var f2 = fn1();
+				f2(30);
+			};
+			f1();
+
+			// 2.函数作为参数被传递
+			function f2(){
+				var a = 20;
+				var fn = function (x){
+					if (x > a) {
+						console.log(x - a);
+					};
+				};
+
+				(function (f){			/*此函数是自运行函数，后面括号中就是传入的参数*/
+					var a = 100;
+					f(30);				/*f()在执行时，a的取值不是100，而是10.注意，要在创建函数的地方找自由变量*/
+				})(fn);
+			};
+			f2();
+
+		};
+		class15();
+		
+	})
+</script>
+</body>
+</html>
