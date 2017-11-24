@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>this/call/apply</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	
+<script>
+	$(function(){
+
+		// 2.2.2  call和apply的用途
+		function myF1(){
+			/**
+			 *	call和apply功能一模一样，区别在于传入的参数不同
+			 *	1. 	apply传入两个参数，第一个是函数内部的this指向，第二个是数组形式，函数需要的参数组成的数组
+			 *	   	call传入的参数可以多余两个，第一个是函数内部的this指向，后面都是函数需要的参数，用逗号隔开
+			 *
+			 *	2.call和apply最常见的用途是改变函数内部的this指向
+			 *		看例子1
+			 *	3.借用其他对象的方法
+			 *		看例子2
+			 *	本人对apply的理解：
+			 *		例子2中，假设我有几个月饼一个盒子，我要把月饼装进盒子中，但是我需要一个机器（干活的人）来
+			 *		帮我把月饼装入盒子中。这时，函数 Cfun1 就是我要找的工具，apply就是我本人，this是我的月饼盒，
+			 *		arguments 是我的月饼。我带着盒子与月饼在 Cfun1 的帮助下把我的月饼装进了我的盒子中
+			 **/
+
+			// 例子1
+			function example1(){
+				var a = {name:'小花'};
+				window.name = 'window';
+				function getName(){
+					console.log(this.name);		/*在普通函数中，this指向window*/
+				};
+				getName();
+				getName.apply(a);
+				getName.call(a);
+			};
+			example1();
+
+			// 例子2
+			function example2(){
+				function Cfun1(name,age){
+					this.name = name;
+					this.age = age
+				};
+				function Cfun2(){			/*构造函数2借用了构造函数1的方法*/
+					Cfun1.apply(this,arguments);	/*此处,this指向 Cfun2 创建出的对象。this改变了 Cfun1 的this指向*/
+				};
+				Cfun2.prototype.getName = function(){
+					return this.name;
+				};
+				Cfun2.prototype.getAge = function(){
+					return this.age;
+				};
+
+				var a = new Cfun2('大红',18);
+				console.log(a.getName());
+				console.log(a.getAge());
+			};
+			example2();
+		};
+		myF1();
+	})
+</script>
+</body>
+</html>
