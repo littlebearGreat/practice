@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象的javascript</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	
+<script>
+	$(function(){
+
+		// 1.21节  一段“多态”的javascript代码      1.2.2  对象的多态性
+		function myF1(){
+
+			/**
+			 *	1.修改代码总是危险的，修改的地方越多，程序出错的可能性越大
+			 *	2.把 “不变的事物” 与 “可变的事物” 分离开
+			 *	3.把可变的事物封装起来，这给予了我们扩展程序的能力，程序看起来是可生长的，这符合 开放-封闭原则。
+			 *	4.对于修改代码，仅仅增加代码就能完成功能，这显然优雅和安全得多。
+			 *	看下面例子
+			 *	
+			 **/
+
+			// 拿动物叫出声来的事例（动物都会叫出声，是不变的）
+			var makeSound = function (animal){	
+				animal.sound();
+			};
+
+			// 把可变的部分封装起来（什么动物叫出什么声音是可变的）
+			var Duck = function(){};
+			Duck.prototype.sound = function(){
+				console.log('嘎嘎嘎');
+			};
+
+			var Cat = function(){};
+			Cat.prototype.sound = function(){
+				console.log('喵喵喵');
+			};
+
+
+			// 让动物叫出来
+			makeSound( new Duck() );
+			makeSound( new Cat() );
+
+			// 现在，我要让一条狗加入进来，可以这样做
+			var Dog = function(){};
+			Dog.prototype.sound = function(){
+				console.log('汪汪汪');
+			};
+
+			makeSound( new Dog() );
+
+			// 这样就做到了没有修改原来的代码，只是增加了一段代码就得到了我想要的，这样，显然比修改代码优雅安全得多
+
+		};
+		myF1();
+
+
+		// 1.4.1 使用克隆的原型模式
+		function myF2(){
+
+			/**
+			 *	Object.create(obj)    克隆对象
+			 *	1.	看例子1
+			 *	2.	在不支持Object.create方法的浏览器下，可用例子2的方法
+			 *	3.	克隆，是创建对象的手段
+			 *	4.	通过Object.create来创建对象的效率并不高，通常比通过构造函数创建对象要慢
+			 **/
+
+			// 例子1
+			function example1(){
+			 	var a = {
+			 		name: '小花',
+			 		age: 18
+			 	};
+
+			 	var b = Object.create(a);
+			 	console.log(b);			/*看似浏览器中打印出的是个空对象，但是其__proto__是指向a的，不要被表面给骗了*/
+			 	console.log(b.name);
+			 	console.log(b.age);
+
+			 	b.age = 16;			/*这三行证明了b确实是克隆出来的*/
+			 	console.log(b);	
+			 	console.log(a);
+			};
+			example1();
+
+			// 例子2
+			function example2(){
+
+				Object.create = Object.create || function(obj){
+					var F = function(){};			/*如果不支持克隆，就创建一个构造函数，使得这个构造函数的prototype指向obj，*/
+					F.prototype = obj;				/*那么，此构造函数new出的对象，就有obj的属性*/
+					return new F();					/*返回new出的对象即可*/
+				};
+
+			};
+			example2();
+
+		};
+		myF2();
+
+
+		// 1.4.5 javascript中的原型继承
+		function myF3(){
+
+			/**
+			 *	javascript遵循原型编程的基本规则：
+			 *		a. 所有的数据都是对象
+			 *		b. 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型，并克隆它
+			 *		c. 对象会记住它的原型
+			 *		d. 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型
+			 *
+			 *	1. 个人理解 原型链
+			 *		对象都是通过克隆得到了（js中的跟对象是Object.prototype），假设通过克隆a得到b，那么a就是b的父亲（原型）,儿子会记住父亲，父亲有责任
+			 *		出面为儿子解决儿子解决不了的事情，这就是如果某个方法b没有，那么就会顺着原型链在b的原型中找方法。如果a不能为儿子b解决问题，
+			 *		那么此时a的父亲出面，一直找到老祖先(Object.prototype)。这就是原型链(原型继承)。
+			 *		看下面例子1
+			 *
+			 *	2. 	每个对象的prototype都指向创建它的对象，如果我们想继承某个对象的方法，可以使得一个构造函数的prototype指向该对象
+			 *		看例子2
+			 *	3.	通过设置构造器的prototype来实现原型继承的时候，除了Object.prototype本身之外，任何对象都会有一个原型
+			 *	4.	通过Object.create(null)可以创建出没有原型的对象
+			 **/
+
+			// 例子1
+			function example1(){
+				var a = {
+					m1: function(){
+						console.log('方法m1');
+					}
+				};
+
+				console.log(Object.prototype);		/*Object.prototype下有很多方法，我们就拿toString来测试*/
+
+				if (a.toString) {
+					console.log('有这个方法');		/*可以打印出此方法*/
+				};
+			};
+			example1();
+
+			// 例子2
+			function example2(){
+				var a = {name:'小花'};
+				function B(){};
+				B.prototype = a;	/*这样，B创建出的对象就有a的属性*/
+				var c = new B();
+				console.log(c.name);
+			};
+			example2();
+
+		};
+		myF3();
+
+
+	})
+</script>
+</body>
+</html>
