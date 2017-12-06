@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>闭包和高阶函数</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+	<ul class="box1">
+		<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+		<li>5555</li>
+	</ul>
+	<ul class="box2">
+		<li>今今今今今</li>
+		<li>天天天天天</li>
+		<li>是是是是是</li>
+		<li>晴晴晴晴晴</li>
+		<li>天天天天天</li>
+	</ul>
+<script>
+	$(function(){
+
+	})
+	$(function(){
+		
+		// 3.1 闭包
+		function myFun1(){
+
+			/**
+			 *	例子1
+			 *	一个经典的例子:
+			 *	点击后打印的都是5，为什么？因为在点击前for循环已经结束了，i已经是5了
+			 **/
+			function example1(){
+				var li = $('.box1 li');
+				for (var i = 0; i < li.length; i++) {
+					li.eq(i).click(function(){
+						console.log(i)
+					});
+				};
+			};
+			example1();
+
+
+			/**
+			 *	例子2
+			 *	把例子1改一下
+			 **/
+			function example2(){
+				var li = $('.box2 li');
+				for (var i = 0; i < li.length; i++) {
+					(function(i){
+						li.eq(i).click(function(){
+							console.log(i);
+						});
+					})(i);
+				};
+			};
+			example2();
+		};
+		myFun1();
+
+		function myFun2(){
+
+		};
+		myFun2();
+
+		// 3.2 高阶函数
+		function myFun3(){
+			/**
+			 *	Array.prototype.sort  数组排序
+			 *	1.	这个方法接收一个函数作为参数，函数里封装了数组的排序规则
+			 *	2.	Array.prototype.sort方法中，对数组进行排序是不变的部分，使用什么规则是可变的部分
+			 *	3.	把可变的部分封装在函数的参数里，动态传入Array.prototype.sort，使得此方法非常灵活
+			 **/
+
+			 console.log(Array.prototype.sort);
+			// 从小到大
+			var a = [1,4,3,6].sort(function(a,b){
+				return a-b;
+			});
+			console.log(a);
+
+			// 从大到小
+			var b = [1,4,3,6].sort(function(a,b){
+				return b-a;
+			});
+			console.log(b);
+		};
+		myFun3();
+
+		function myFun4(){
+			/**
+			 *	判断数据类型
+			 *	
+			 **/
+
+
+			var a = Object.prototype.toString.call({age:5});
+			console.log(a);		/*[object Object]*/
+
+			var b = Object.prototype.toString.call([1,5,3]);
+			console.log(b);		/*[object Array]*/
+
+			var c = Object.prototype.toString.call(2);
+			console.log(c);		/*[object Number]*/
+
+			var isArray = function(obj){
+				return toString.call(obj) === '[object Array]';
+			};
+			var isJson = function(obj){
+				return toString.call(obj) === '[object Object]';
+			};
+
+		};
+		myFun4();
+
+		
+	})
+</script>
+</body>
+</html>
