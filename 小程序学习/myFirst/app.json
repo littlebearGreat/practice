@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/myself/myself"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#8a57ea",
+    "navigationBarTitleText": "小羊",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    },{
+      "pagePath":"pages/detail/detail",
+      "text":"详情"
+    },{
+      "pagePath":"pages/myself/myself",
+      "text":"我的"
+    }],
+    "borderStyle": "white",
+    "selectedColor": "#46f7bf"
+  }
+}

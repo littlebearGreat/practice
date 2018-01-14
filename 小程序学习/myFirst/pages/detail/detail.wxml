@@ -1,0 +1,2 @@
+<view>下面是地图</view>
+<map class='map' longitude='112.77' latitude='35.044'></map>
