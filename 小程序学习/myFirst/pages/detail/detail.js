@@ -1,3 +1,4 @@
+var common = require('../../common.js');
 Page({
 
   /**
@@ -61,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  // 测试公共Js
+  test:function(){
+    common.test();
   }
 })

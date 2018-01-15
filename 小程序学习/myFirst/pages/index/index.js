@@ -16,6 +16,9 @@ Page({
       url: '../logs/logs'
     })
   },
+  changeHollowWord : function(){
+    this.setData({message:"欢迎你"})
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

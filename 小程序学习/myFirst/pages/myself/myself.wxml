@@ -1,1 +1,3 @@
 <view>这是关于自己的页面</view>
+<view wx:if="{{l}}">大于2</view>
+<view wx:else>不大于2</view>
