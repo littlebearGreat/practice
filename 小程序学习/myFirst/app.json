@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/equip/equip",
     "pages/logs/logs",
-    "pages/detail/detail",
+    "pages/map/map",
     "pages/myself/myself"
   ],
   "window":{
@@ -13,16 +13,22 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
+      "pagePath": "pages/equip/equip",
+      "text": "设备",
+      "iconPath": "img/equip.png",
+      "selectedIconPath": "img/equipA.png"
     },{
-      "pagePath":"pages/detail/detail",
-      "text":"详情"
+      "pagePath":"pages/map/map",
+      "text":"MAP",
+      "iconPath": "img/map.png",
+      "selectedIconPath": "img/mapA.png"
     },{
       "pagePath":"pages/myself/myself",
-      "text":"我的"
+      "text":"我的",
+      "iconPath": "img/myself.png",
+      "selectedIconPath": "img/myselfA.png"
     }],
     "borderStyle": "white",
-    "selectedColor": "#46f7bf"
+    "selectedColor": "#0678fa"
   }
 }
