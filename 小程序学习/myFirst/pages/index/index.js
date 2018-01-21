@@ -4,20 +4,34 @@ const app = getApp()
 
 Page({
   data: {
-    message: '你好',
-    array:['苹果','香蕉','榴莲'],
+    inputValue: null,
+    // 设备数据可以放在equipList数组中
+    equipList: ["设备1", "设备2", "设备3", "设备4", "设备5"],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
+  // 搜索框输入同步到data中
+  searchToData: function(e){
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+  // 搜索点击
+  searchBtn: function(){
+    wx.showToast({
+      title: this.data.inputValue,
+      duration: 2000
+    })
+  },
+
+
+
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
-  },
-  changeHollowWord : function(){
-    this.setData({message:"欢迎你"})
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

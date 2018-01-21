@@ -1,22 +1,23 @@
 {
   "pages":[
-    "pages/equip/equip",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/map/map",
-    "pages/myself/myself"
+    "pages/myself/myself",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#8a57ea",
-    "navigationBarTitleText": "小羊",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#0377fa",
+    "navigationBarTitleText": "设备",
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/equip/equip",
+      "pagePath": "pages/index/index",
       "text": "设备",
-      "iconPath": "img/equip.png",
-      "selectedIconPath": "img/equipA.png"
+      "iconPath": "img/index.png",
+      "selectedIconPath": "img/indexA.png"
     },{
       "pagePath":"pages/map/map",
       "text":"MAP",

@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<!--设备模板  -->
+<template name="equip">
+  <view class='template'>
+    <view class='pic'>
+    <navigator url='../detail/detail?data={{item}}'>
+       <image src='../../img/equip.jpg'></image> 
+    </navigator>
+      
+    </view>
+    <view class='inf'>
+      <text class='tit'>智能发电设备运行状况</text>
+      <text class='ct'>运行状态：离线</text>
+      <text class='ct'>运行状态：离线</text>
+    </view>
+  </view>
+</template>
+<!--内容  -->
+<view class='search'>
+  <input class='searchIpt' placeholder="请输入设备名称" confirm-type="搜索" bindinput='searchToData'></input>
+  <image bindtap='searchBtn' src='../../img/search.png'></image>
+</view>
+<view class='list'>
+  <block wx:for="{{equipList}}">
+    <template is="equip" data="{{item}}"></template>
+  </block>
+</view>
