@@ -38,35 +38,25 @@
   </view>
   <view class='state'>
     <text class='h1'>运行状态</text>
-    <view class='list noBorder'>
-      <view class='l'>控制电源电压：正常</view>
-      <view class='r'>冷却水温度：正常</view>
-    </view>
     <view class='list'>
-      <view class='l'>控制电源电压：正常</view>
-      <view class='r'>冷却水温度：正常</view>
-    </view>
-    <view class='list'>
-      <view class='l'>控制电源电压：正常</view>
-      <view class='r'>冷却水温度：正常</view>
+      <view>控制电源电压：正常</view>
+      <view>冷却水温度：正常</view>
+      <view>控制电源电压：正常</view>
+      <view>冷却水温度：正常</view>
+      <view>控制电源电压：正常</view>
+      <view>冷却水温度：正常</view>
     </view>
   </view>
   <view class='state'>
-    <text class='h1'>设备参数</text>
-    <view class='list noBorder'>
-      <view class='l'>冷却水温度：10℃</view>
-      <view class='r'>发动机转速：10pm</view>
-    </view>
+    <text class='h1'>运行状态</text>
     <view class='list'>
-      <view class='l'>滑油压力：xKPs</view>
-      <view class='r'>控制电源电压：xV</view>
-    </view>
-    <view class='list'>
-      <view class='l'>滑油温度：x℃</view>
-      <view class='r'>油箱油量：x%</view>
-    </view>
-    <view class='list'>
-      <view class='l'>发动机组无功功率：xVAR</view>
+      <view>冷却水温度：10℃</view>
+      <view>发动机转速：10pm</view>
+      <view>滑油压力：xKPs</view>
+      <view>控制电源电压：xV</view>
+      <view>滑油温度：x℃</view>
+      <view>油箱油量：x</view>
+      <view>发动机组无功功率：xVAR</view>
     </view>
   </view>
 </view>

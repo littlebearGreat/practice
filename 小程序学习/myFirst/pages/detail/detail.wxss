@@ -78,26 +78,19 @@ page{
   color: #333;
 }
 .state .list{
-  display: block;
-  height: 64rpx;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  overflow: hidden;
   margin-left: 30rpx;
   margin-right: 30rpx;
-  border-top: 1px solid #ddd;
+  margin-bottom: 20rpx;
 }
-.state .list .l{
-  float: left;
+.state .list view{
+  display: inline-block;
   width: 300rpx;
   font-size: 24rpx;
   line-height: 64rpx;
   color: #666;
-}
-.state .list .r{
-  float: right;
-  width: 300rpx;
-  font-size: 24rpx;
-  line-height: 64rpx;
-  color: #666;
-}
-.state .noBorder{
-  border: none;
+  border-bottom: 1px solid #ddd;
 }

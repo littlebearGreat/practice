@@ -1,8 +1,14 @@
-<view>这是关于自己的页面</view>
-<view wx:if="{{l}}">大于2</view>
-<view wx:else>不大于2</view>
-<swiper class='banner' >
-  <swiper-item wx:for="{{img}}">
-    <image src='{{item}}'/>
-  </swiper-item>
-</swiper>
+<view class="getUserInfo">
+  <view class='box'>
+    <switch checked bindchange="getUserInfo"/>
+    <text>获取用户信息</text>
+  </view>
+</view>
+<view class="getUserInfo setEmail">
+  <view class='box'>
+    <switch checked bindchange="getUserInfo"/>
+    <text>设备预警邮件提醒</text>
+  </view>
+</view>
+<view class='btn bindEmail'>绑定邮箱</view>
+<view class='btn addEquip'>添加设备</view>

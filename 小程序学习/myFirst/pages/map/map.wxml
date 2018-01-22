@@ -1,3 +1,1 @@
-<view>下面是地图</view>
-<map class='map' longitude='112.77' latitude='35.044'></map>
-<view bindtap='test'>点击测试</view>
+<map class='map' longitude='113.945' latitude='22.54'></map>
