@@ -1,0 +1,71 @@
+<!-- 0316.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+function test1(){
+	var a = 5,
+		b = 5,
+		c = 5,
+		d = 5;
+	++a;
+	b++;
+	--c;
+	d--;
+
+	console.log(a);		/*6*/
+	console.log(b);		/*6*/
+	console.log(c);		/*4*/
+	console.log(d);		/*4*/
+};
+test1();
+
+function test2(){
+	var a = 5,
+		b = 5;
+	var c = ++a,
+		d = b++;
+
+	console.log(a);		/*6*/
+	console.log(b);		/*6*/
+	console.log(c);		/*6*/
+	console.log(d);		/*5*/
+};
+test2();
+
+function test3(){
+	var a = 5,
+		b = 5;
+	var c = ++a + 2,
+		d = b++ + 2;
+
+	console.log(a);		/*6*/
+	console.log(b);		/*6*/
+	console.log(c);		/*8*/
+	console.log(d);		/*7*/	
+};
+test3();
+
+function test4(){
+	var a = parseInt(11010,2);
+	console.log(a);
+};
+test4();
+
+function test5(){
+	var a = ['橡胶','苹果','土豆'];
+	for(var x in a){
+		console.log(x);
+		console.log(a[x]);
+	};
+};
+test5();
+
+</script>
+</html>

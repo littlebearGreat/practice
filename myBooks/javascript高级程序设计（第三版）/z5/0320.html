@@ -1,0 +1,184 @@
+<!-- 0320.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>学习小红书</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// 数组的5种遍历方法
+	// every some map filter forEach
+	function t1(){
+		var array = [1,2,3,4,5,6];
+
+		var a = array.every(function(item,index,array){
+			if (item > 0) {
+				return true;
+			};
+		});
+		console.log(a);
+
+		var b = array.every(function(item,index,array){
+			if (item>2) {
+				return true;
+			};
+		});
+		console.log(b);
+
+		var c = array.some(function(item,index,array){
+			if (item>2) {
+				return true;
+			};
+		});
+		console.log(c);
+
+		var d = array.filter(function(item,index,array){
+			if (item>2) {
+				return true;
+			};
+		});
+		console.log(d);
+
+		var e = array.map(function(item,index,array){
+			if (item>2) {
+				return '大于2';
+			}else{
+				return '不大于2';
+			};
+		});
+		console.log(e);
+	};
+	t1();
+
+	// 时间的valueOf
+	function t2(){
+		var now = new Date();
+		console.log(now);
+
+		var a = now.valueOf();
+		console.log(a);
+	};
+	t2();
+
+	// 函数
+
+	// 函数是对象，函数名是指针
+	function t3(){
+		var a = new Function('n1','n2','return n1 + n2');
+		console.log(a('aa','bb'));
+
+		function b(m,n){
+			return m + n;
+		};
+
+		console.log(b(1,2));
+
+		var c = b;
+		console.log(c(2,2));
+
+		b = null;
+		console.log(c(2,2));
+	};
+	t3();
+
+	// arguments
+	function t4(){
+		function fac(num){
+			if (num <= 1) {
+				return 1;
+			}else{
+				return num * fac(num-1)
+			};
+		};
+
+		console.log(fac(2));
+		console.log(fac(3));
+		console.log(fac(4));
+
+		var fac1 = fac;
+		fac = function(){
+			return 0;
+		};
+		console.log(fac1(4));
+
+
+		function arg(num){
+			if (num <= 1) {
+				return 1;
+			}else{
+				return num * arguments.callee(num-1);
+			};
+		};
+		console.log(arg(4));
+
+		var arg1 = arg;
+		arg = function(){
+			return 0;
+		};
+		console.log(arg1(4));
+	};
+	t4();
+
+	// this  引用的是函数执行的环境对象
+	function t5(){
+		window.color = 'red';
+		function sayColor(){
+			console.log(this);
+			console.log(this.color);
+		};
+		sayColor();
+
+		var a = {color:'小花'};
+		a.sayColor = sayColor;
+		a.sayColor();
+
+	};
+	t5();
+
+	// caller
+	function t6(){
+		function a(){
+			console.log(arguments.callee.caller);
+		};
+
+		var b = a,
+			c = a,
+			d = a;
+		function e(){
+			a();
+		};
+		e();
+	};
+	t6();
+
+	// apply() call() bind()
+	function t7(){
+		this.color = 'red';
+		var a = {color:'bbb'};
+		function b(){
+			console.log(this.color);
+		};
+		b();
+		b.apply(a);
+
+		b();
+		b.call(a);
+
+		b();
+		var c = b.bind(a);	/*bind()会创建一个函数实例，函数的this会被绑定到传给bind的参数*/
+		c();
+	};
+	t7();
+
+	//基本数据类型不是对象，不该有方法，但是，在执行过程中，经历了对象，调用的是对象上的方法
+	function t8(){
+		var a = 'abcdefg';
+		console.log('abcdefg'.substring(2));	/*基本数据类型是没有属性（方法的），但是确实执行了，这就是中间经历了又对象的过程，书p118*/
+		console.log(a.substring(2));
+	};
+	t8();
+</script>
+</html>

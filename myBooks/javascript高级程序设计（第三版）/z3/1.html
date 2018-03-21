@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基本概念</title>
+	<script src="../jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+	$(function(){
+		/*
+		 *	parseInt() 
+		 *	接收两个参数，第一个：要抓换的字符串；第二个：数值基数
+		 *	建议：每次使用都指明基数
+		 *	注意：第一个参数必须是字符串，否则可能会出错
+		 *		如：c
+		 */
+		function myFun1(){
+			var a = parseInt('-10',10);
+			console.log(a);
+
+			var b = parseInt('025',10);
+			console.log(b);
+
+			var c = parseInt(010,10);	/*010,被js当做8进制处理了，在转换前都已经处理成十进制了*/
+			console.log(c);
+			console.log(010);
+		};
+		myFun1();
+
+		/*
+		 *	一元操作符：只能操作一个值的操作符叫一元操作符
+		 *	1.递增和递减：各有两个版本，前置型和后置型
+		 *		前置型是先进行 ++（或--）运算，在进行其它运算，后置型刚好相反，看 f1 f2
+		 */
+		function muFun2(){
+			function f1(){
+				var a = 2,
+					b = 20;
+				var c = --a + b;
+				var d = a + b;
+				console.log(c);
+				console.log(d);
+			};
+			f1();
+
+			function f2(){
+				var a = 2,
+					b = 20;
+				var c = a-- + b;
+				var d = a + b;
+				console.log(c);
+				console.log(d);
+			};
+			f2();
+		};
+		muFun2();
+
+		/*
+		 *	逻辑操作符：!   &&  ||
+		 */
+		function myFun3(){
+			var a = true;
+			//var result = a && b;
+			//console.log(a);	/*b is not defined*/
+
+			var c = false;
+			var d = c && b;		/*此处说明，如果第一个是false，根本就不会再继续判断b*/
+			console.log(d);
+		};
+		myFun3();
+	})
+</script>
+</body>
+</html>
