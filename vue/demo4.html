@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>条件渲染</title>
+</head>
+<body>
+    <div class="app1">
+        <p v-if="show">随机数大于0.5</p>
+        <p v-else>随机数小于0.5</p>
+    </div>
+<script>
+    var app1 = new Vue({
+        el: '.app1',
+        data: {
+            n: Math.random()
+        },
+        computed: {
+            show: function(){
+                return (this.n>0.5)
+            }
+        }
+    })
+</script>
+</body>
+</html>
