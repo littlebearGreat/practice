@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板语法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div class="app1">
+        <p>{{tag}}</p>
+        <p v-html="tag"></p>
+        <div v-bind:id="dynamicId"></div>
+        <div v-bind:id="'id1_' + dynamicId"></div>
+        <button v-bind:disabled="isButtonDisabled">Button</button>
+        <h5>{{a + 1}}</h5>
+        <h5>{{b>5 ? 'b大于5' : 'b不大于5'}}</h5>
+    </div>
+<script>
+    var app1 = new Vue({
+        el: '.app1',
+        data: {
+            tag:'<span style="color:red;">这应该是红色</span>',
+            dynamicId: 'ddd',
+            isButtonDisabled: Boolean(0),
+            a: 2,
+            b: 5
+        }
+    });
+
+</script>  
+</body>
+</html>

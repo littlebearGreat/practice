@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hello word</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div class="he">{{message}}</div>
+    <h2 class="app2" v-bind:title="text">{{text}}</h2>
+    <h3 class="app3" v-if="seen">{{text}}</h3>
+    <ul class="app4">
+        <li v-for="x in array">{{x}}</li>
+    </ul>
+    <button class="app5" v-on:click="btn">点我试试</button><br>
+    <div class="ipt">
+        <input type="text" v-model="val" v-on:focus="focus" v-on:blur="blur">
+        <h5>{{val}}</h5>
+    </div>
+    <div class="app7">
+        <todo v-for="x in array" v-bind:todo="x"></todo>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '.he',
+            data: {
+                message: 'hello word',
+                text: '这是一个H2标签'
+            }
+        });
+        var app2 = new Vue({
+            el: '.app2',
+            data: {
+                text: '这是一个H2标签'
+            }
+        });
+        var app3 = new Vue({
+            el: '.app3',
+            data: {
+                seen: true,
+                text: '当我是true的时候你能看到我'
+            }
+        });
+        var app4 = new Vue({
+            el: '.app4',
+            data: {
+                array: ['苹果','香蕉','菊花','红薯']
+            }
+        });
+        var app5 = new Vue({
+            el: '.app5',
+            methods: {
+                btn: function(){
+                    alert('让你点你就点啊')
+                }
+            }
+        });
+        var app6 = new Vue({
+            el: '.ipt',
+            data: {
+                val: '我是个输入框'
+            },
+            methods: {
+                focus: function(){
+                    this.val = '';
+                    console.log(this);
+                },
+                blur: function(){
+                    alert(this.val);
+                }
+            }
+        });
+        Vue.component('todo', {
+            props: ['todo'],
+            template:'<p>{{todo}}</p>'
+        })
+        var app7 = new Vue({
+            el: '.app7',
+            data: {
+                array: ['苹果','香蕉','菊花','红薯']
+            }
+        })
+    </script>
+</body>
+</html>
