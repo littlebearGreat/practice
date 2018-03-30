@@ -14,15 +14,68 @@
     </style>
 </head>
 <body>
-    <p class="app1" v-bind:class="{red:addT,weight:addF}">今天的天气怎样？</p>
+    <div class="app1">
+        <p v-bind:class="{red:addT,weight:addF}">今天的天气怎样？</p>
+        <p v-bind:class="obj">今天又是一天啊</p>
+    </div>
+    <p class="app2" v-bind:class="classObj">银烛秋光冷画屏</p>
+    <p class="app3" v-bind:class="[addR,addB,addW]">轻罗小扇扑流萤</p>
+    <div class="app4">
+        <p v-bind:style="{color:'pink',fontSize:'16px'}">天阶夜色凉如水</p>
+        <p v-bind:style="style">卧看牵牛织女星</p>
+    </div>
     <script>
         var app1 = new Vue({
             el: '.app1',
             data: {
                 addT: true,
-                addF: false
+                addF: false,
+                obj: {
+                    orange: true,
+                    blue: true
+                }
+            }
+        });
+
+        var app2 = new Vue({
+            el: '.app2',
+            data:{
+                addR: true,
+                addB: false,
+                addO: true
+            },
+            computed: {
+                classObj: function(){
+                    return {
+                        red: this.addR,
+                        blue: this.addB,
+                        weight: this.addR && this.addO
+                    }
+                }
+            }
+        });
+
+        // 数组语法
+        var app3 = new Vue({
+            el: '.app3',
+            data: {
+                addR: 'red',
+                addB: 'blue',
+                addW: 'weight'
+            }
+        });
+
+        var app4 = new Vue({
+            el: '.app4',
+            data: {
+                style: {
+                    color: 'green',
+                    fontSize: '16px',
+                    fontWeight: 'blod'
+                }
             }
         })
+
     </script>
 </body>
 </html>
