@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>事件处理</title>
+</head>
+<body>
+   <div class="app1">
+       <button v-on:click="clickN++">点击</button>
+       <p>按钮被点击了{{clickN}}次</p>
+   </div>
+   <div class="app2">
+       <button v-on:click="ev">点击试试</button>
+   </div>
+   <div class="app3">
+       <button v-on:click="clickN($event)">点击</button>
+   </div>
+   <div class="app4">
+       <div v-on:click="div">
+           <button v-on:click.stop.once="btn">冒泡事件</button>
+       </div>
+   </div>
+<script>
+    var app1 = new Vue({
+        el: '.app1',
+        data: {
+            clickN: 0
+        }
+    });
+
+    var app2 = new Vue({
+        el: '.app2',
+        methods: {
+            ev: function(event){
+                console.log(event.target.innerHTML);
+            }
+        }
+    });
+    var app3 = new Vue({
+        el: '.app3',
+        methods: {
+            clickN: function(n){
+                console.log(n);
+            }
+        }
+    });
+    var app4 = new Vue({
+        el: '.app4',
+        methods: {
+            btn: function(){
+                alert('我是按钮');
+            },
+            div: function(){
+                alert('我是div');
+            }
+        }
+    });
+</script>
+</body>
+</html>
