@@ -6,11 +6,80 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>条件渲染</title>
+    <style>
+        .app4Btns span{
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="app1">
         <p v-if="show">随机数大于0.5</p>
         <p v-else>随机数小于0.5</p>
+    </div>
+    <div class="app2">
+        <label for="ipt1" v-if="isName">
+            输入姓名：
+            <input id="ipt1" type="text" placeholder="请输入姓名">
+        </label>
+        <label for="ipt2" v-else>
+            输入邮箱：
+            <input id="ipt2" type="text" name="email" placeholder="请输入邮箱">
+        </label>
+        <button v-on:click="changeType">切换type</button>
+    </div>
+    <div class="app3">
+        <label for="ipt3" v-if="isT">
+            请输入前一句：
+            <input id="ipt3" type="text" key="ipt3">
+        </label>
+        <label for="ipt4" v-else>
+            请输入后一句：
+            <input type="text" id="ipt4" key="ipt4">
+        </label>
+        <button v-on:click="changeType">切换</button>
+    </div>
+    <div class="app4">
+        <div v-show="isShowN === 1">
+            <h5>春兴</h5>
+            <p>杨柳阴阴细雨晴，</p>
+            <p>残花落尽见流莺；</p>
+            <p>春风一夜吹乡梦，</p>
+            <p>又逐春风到洛城。</p>
+        </div>
+        <div v-show="isShowN === 2">
+            <h5>晓出净慈寺送林子方</h5>
+            <p>毕竟西湖六月中，</p>
+            <p>风光不与四时同；</p>
+            <p>接天莲叶无穷碧，</p>
+            <p>映日荷花别样红。</p>
+        </div>
+        <div v-show="isShowN === 3">
+            <h5>秋夕</h5>
+            <p>银烛秋光冷画屏，</p>
+            <p>轻罗小扇扑流萤；</p>
+            <p>天阶夜色凉如水，</p>
+            <p>卧看牵牛织女星。</p>
+        </div>
+        <div v-show="isShowN === 4">
+            <h5>问刘十九</h5>
+            <p>绿蚁新醅酒，</p>
+            <p>红泥小火炉；</p>
+            <p>晚来天欲雪，</p>
+            <p>能饮一杯无？</p>
+        </div>
+        <div class="app4Btns">
+            <span v-on:click="change(1)">春</span>
+            <span v-on:click="change(2)">夏</span>
+            <span v-on:click="change(3)">秋</span>
+            <span v-on:click="change(4)">冬</span>
+        </div>
+    </div>
+    <div class="app5">
+        <ul>
+            <li v-for="(item,index) in fruits">{{item}}{{index}}</li>
+        </ul>
     </div>
 <script>
     var app1 = new Vue({
@@ -23,7 +92,48 @@
                 return (this.n>0.5)
             }
         }
-    })
+    });
+    var app2 = new Vue({
+        el: '.app2',
+        data: {
+            isName: true
+        },
+        methods: {
+            changeType: function(){
+                console.log(this.isName)
+                this.isName = !this.isName;
+            }
+        }
+    });
+    var app3 = new Vue({
+        el: '.app3',
+        data: {
+            isT: true
+        },
+        methods: {
+            changeType: function(){
+                this.isT = !this.isT;
+            }
+        }
+    });
+    var app4 = new Vue({
+        el: '.app4',
+        data: {
+            isShowN: 1
+        },
+        methods: {
+            change: function(number){
+                this.isShowN = number;
+            }
+        }
+    });
+    var app5 = new Vue({
+        el: '.app5',
+        data: {
+            fruits: ['苹果','香蕉','柿子']
+        }
+    });
+
 </script>
 </body>
 </html>
