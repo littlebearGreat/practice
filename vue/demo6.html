@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>表单输入</title>
+</head>
+<body>
+    <div class="app1">
+        <input type="checkbox" id="app1" v-model="checked">
+        <label for="app1">{{checked}}</label>
+    </div>
+
+    <div class="app2">
+        <input type="checkbox" name="fruit" id="apple" v-model="checked[0]">
+        <label for="apple">苹果</label>
+        <input type="checkbox" name="fruit" id="orange" v-model="checked[1]">
+        <label for="orange">橘子</label>
+        <input type="checkbox" name="fruit" id="banana" v-model="checked[2]">
+        <label for="banana">香蕉</label>
+        <p>已选中的：{{checked}}</p>
+    </div>
+
+<script>
+    var app1 = new Vue({
+        el: '.app1',
+        data: {
+            checked: false
+        }
+    });
+    var app2 = new Vue({
+        el: '.app2',
+        data: {
+            checked:[]
+        }
+    })
+</script>
+</body>
+</html>
