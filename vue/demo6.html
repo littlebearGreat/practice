@@ -14,13 +14,41 @@
     </div>
 
     <div class="app2">
-        <input type="checkbox" name="fruit" id="apple" v-model="checked[0]">
+        <input type="checkbox" name="fruit" id="apple" value="苹果" v-model="checked">
         <label for="apple">苹果</label>
-        <input type="checkbox" name="fruit" id="orange" v-model="checked[1]">
+        <input type="checkbox" name="fruit" id="orange" value="橘子" v-model="checked">
         <label for="orange">橘子</label>
-        <input type="checkbox" name="fruit" id="banana" v-model="checked[2]">
+        <input type="checkbox" name="fruit" id="banana" value="香蕉" v-model="checked">
         <label for="banana">香蕉</label>
         <p>已选中的：{{checked}}</p>
+    </div>
+
+    <div class="app3">
+        <input type="radio" id="apple1" value="苹果" v-model="fruit">
+        <label for="apple1">苹果</label>
+        <input type="radio" id="orange1" value="橘子" v-model="fruit">
+        <label for="orange1">橘子</label>
+        <p>选择的是：{{fruit}}</p>
+    </div>
+
+    <!-- 下拉框 -->
+    <div class="app4">
+        <select name="" id="" v-model="selected">
+            <option>苹果</option>
+            <option>橘子</option>
+            <option>香蕉</option>
+        </select>
+        <p>选择的是：{{selected}}</p>
+    </div>
+
+    <!-- 下拉框 -->
+    <div class="app5">
+        <select name="" id="" v-model="selected">
+            <option>苹果</option>
+            <option>橘子</option>
+            <option>香蕉</option>
+        </select>
+        <p>选择的是：{{selected}}</p>
     </div>
 
 <script>
@@ -34,6 +62,24 @@
         el: '.app2',
         data: {
             checked:[]
+        }
+    });
+    var app3 = new Vue({
+        el: '.app3',
+        data: {
+            fruit: ''
+        }
+    });
+    var app4 = new Vue({
+        el: '.app4',
+        data: {
+            selected: ''
+        }
+    });
+    var app5 = new Vue({
+        el: '.app5',
+        data: {
+            selected: []
         }
     })
 </script>
