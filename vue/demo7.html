@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.js"></script>
+    <title>组件</title>
+</head>
+<body>
+    <div class="app1">
+        <my-cont></my-cont>
+    </div>
+    <div class="app2">
+        <my-c2></my-c2>
+    </div>
+    <div class="app3">
+        <my-component></my-component>
+    </div>
+
+<script>
+    Vue.component('my-cont',{
+        template: '<h4>停车坐爱枫林晚</h4>'
+    });
+    var n2 = {
+        template: '<h4>霜叶红于二月花</h4>'
+    };
+    var app1 = new Vue({
+        el: '.app1'
+    });
+    var app2 = new Vue({
+        el: '.app2',
+        components: {
+            'my-c2': n2
+        }
+    });
+</script>
+</body>
+</html>
